@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,6 +26,31 @@
             background-color: #f8f5ef;
             color: #333;
             line-height: 1.7;
+        }
+
+        /* =========================
+           RETURN TO MEMORIAL
+        ========================= */
+
+        #returnMemorial {
+            display: none;
+            text-align: center;
+            background-color: #f1eee7;
+            padding: 15px 20px;
+        }
+
+        #returnMemorial a {
+            display: inline-block;
+            padding: 11px 24px;
+            background-color: #b49a68;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        #returnMemorial a:hover {
+            background-color: #947b4d;
         }
 
         /* =========================
@@ -424,6 +448,13 @@
 
 
 <body>
+
+
+<!-- =========================
+     RETURN TO MEMORIAL
+========================= -->
+
+<div id="returnMemorial"></div>
 
 
 <!-- =========================
@@ -947,7 +978,91 @@
 </footer>
 
 
+<!-- =========================
+     MEMORIAL RETURN SYSTEM
+========================= -->
+
+<script>
+
+    /*
+        This tells the home page which memorial
+        the visitor came from.
+    */
+
+    const params = new URLSearchParams(
+        window.location.search
+    );
+
+    const memorial = params.get("from");
+
+
+    /*
+        ADD YOUR MEMORIAL PAGES HERE.
+
+        Each person gets their own name and
+        their own HTML file.
+    */
+
+    const memorials = {
+
+        george: {
+            name: "George's Memorial",
+            link: "George-Ferguson.html"
+        }
+
+        /*
+        Example for another memorial:
+
+        maria: {
+            name: "Maria's Memorial",
+            link: "Maria.html"
+        },
+
+        john: {
+            name: "John's Memorial",
+            link: "John.html"
+        }
+        */
+
+    };
+
+
+    /*
+        Find the return area.
+    */
+
+    const returnMemorial =
+        document.getElementById("returnMemorial");
+
+
+    /*
+        If the visitor came from a memorial,
+        show the correct return button.
+    */
+
+    if (
+        memorial &&
+        memorials[memorial]
+    ) {
+
+        returnMemorial.innerHTML = `
+
+            <a href="${memorials[memorial].link}">
+
+                ← Return to
+                ${memorials[memorial].name}
+
+            </a>
+
+        `;
+
+        returnMemorial.style.display = "block";
+
+    }
+
+</script>
+
+
 </body>
 
 </html>
-```
