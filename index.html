@@ -3,156 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forever Remembered</title>
+
+    <title>George Edward Ferguson Memorial</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            font-family: Georgia, serif;
-            background-color: #f8f5ef;
+            font-family: Arial, sans-serif;
+            background-color: #f4f1ec;
             color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #333;
+            padding: 15px;
             text-align: center;
         }
 
-        header {
-            background-color: #2f3a3a;
+        nav a {
+            display: inline-block;
             color: white;
-            padding: 60px 20px;
+            text-decoration: none;
+            padding: 12px 25px;
+            margin: 5px;
+            border-radius: 8px;
+            background-color: #555;
+            font-size: 16px;
         }
 
-        header h1 {
-            font-size: 48px;
+        nav a:hover {
+            background-color: #777;
+        }
+
+        /* Main section */
+        .hero {
+            text-align: center;
+            padding: 70px 20px;
+            background-color: #e6dfd5;
+        }
+
+        .hero h1 {
+            font-size: 42px;
             margin-bottom: 10px;
         }
 
-        header p {
+        .hero p {
             font-size: 20px;
+        }
+
+        /* Photo */
+        .photo {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .photo img {
+            width: 250px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 5px solid white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        /* About */
+        .about {
+            max-width: 800px;
+            margin: auto;
+            padding: 30px 20px;
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        .about h2 {
+            font-size: 30px;
+        }
+
+        /* Buttons */
+        .buttons {
+            text-align: center;
+            padding: 30px;
         }
 
         .button {
             display: inline-block;
-            margin-top: 20px;
             padding: 14px 25px;
-            background-color: #b59b6d;
+            margin: 8px;
+            background-color: #333;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 8px;
         }
 
-        section {
-            padding: 50px 20px;
-            max-width: 900px;
-            margin: auto;
+        .button:hover {
+            background-color: #555;
         }
 
-        h2 {
-            font-size: 32px;
-            color: #2f3a3a;
-        }
-
-        .steps {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-
-        .step {
-            background: white;
-            padding: 25px;
-            width: 220px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-
+        /* Footer */
         footer {
-            background-color: #2f3a3a;
-            color: white;
+            text-align: center;
             padding: 25px;
+            margin-top: 30px;
+            background-color: #333;
+            color: white;
         }
     </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Forever Remembered</h1>
-    <p>Honoring Lives. Preserving Memories.</p>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">🏠 Home</a>
+        <a href="memorial.html">🕊️ Memorial</a>
+        <a href="videos.html">🎥 Videos</a>
+        <a href="gallery.html">📷 Gallery</a>
+    </nav>
 
-    <a href="#how-it-works" class="button">
-        Learn How It Works
-    </a>
-</header>
 
-<section>
-    <h2>A Place to Remember</h2>
+    <!-- Welcome Section -->
+    <section class="hero">
+        <h1>In Loving Memory</h1>
 
-    <p>
-        We create beautiful digital memorials that allow
-        families and friends to remember, celebrate, and
-        honor the lives of those they love.
-    </p>
-</section>
+        <p>George Edward Ferguson</p>
 
-<section id="how-it-works">
+        <p>
+            April 19, 1937 – October 10, 2023
+        </p>
+    </section>
 
-    <h2>How It Works</h2>
 
-    <div class="steps">
+    <!-- Photo Section -->
+    <section class="photo">
 
-        <div class="step">
-            <h3>1. Share Their Story</h3>
-            <p>
-                Provide their photos, information, memories,
-                and life story.
-            </p>
-        </div>
+        <!-- Replace this with George's photo -->
+        <img src="george.jpg" alt="George Edward Ferguson">
 
-        <div class="step">
-            <h3>2. We Create Their Memorial</h3>
-            <p>
-                We create a beautiful personal memorial
-                website dedicated to their life.
-            </p>
-        </div>
+    </section>
 
-        <div class="step">
-            <h3>3. Receive Your QR Code</h3>
-            <p>
-                Your memorial receives a unique QR code
-                that connects directly to their page.
-            </p>
-        </div>
 
-        <div class="step">
-            <h3>4. Keep Their Memory Alive</h3>
-            <p>
-                Family and friends can scan the QR code
-                and visit their memorial.
-            </p>
-        </div>
+    <!-- About Section -->
+    <section class="about">
 
-    </div>
+        <h2>Remembering George</h2>
 
-</section>
+        <p>
+            This website is dedicated to the life and memory of
+            George Edward Ferguson.
+        </p>
 
-<section>
+        <p>
+            His life, memories, and the moments he shared with
+            family and friends will always be remembered and cherished.
+        </p>
 
-    <h2>Our Purpose</h2>
+    </section>
 
-    <p>
-        Every life has a story worth remembering.
-        Our goal is to create a lasting digital place
-        where those stories can be preserved for
-        generations to come.
-    </p>
 
-</section>
+    <!-- Website Buttons -->
+    <section class="buttons">
 
-<footer>
-    <p>© 2026 Forever Remembered</p>
-    <p>Honoring lives. Preserving memories.</p>
-</footer>
+        <a href="memorial.html" class="button">
+            🕊️ Visit Memorial
+        </a>
+
+        <a href="videos.html" class="button">
+            🎥 Watch Videos
+        </a>
+
+        <a href="gallery.html" class="button">
+            📷 View Gallery
+        </a>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            Forever remembered, forever loved.
+        </p>
+
+        <p>
+            © George Edward Ferguson Memorial
+        </p>
+
+    </footer>
 
 </body>
 </html>
