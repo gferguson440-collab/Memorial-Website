@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,22 +8,30 @@
     <title>George Edward Ferguson Memorial</title>
 
     <style>
+
+        /* ---------- GENERAL ---------- */
+
         * {
             box-sizing: border-box;
         }
 
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             background-color: #f4f1ec;
             color: #333;
         }
 
-        /* Navigation */
+
+        /* ---------- NAVIGATION ---------- */
+
         nav {
             background-color: #333;
             padding: 15px;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         nav a {
@@ -34,156 +43,315 @@
             border-radius: 8px;
             background-color: #555;
             font-size: 16px;
+            transition: 0.3s;
         }
 
         nav a:hover {
             background-color: #777;
+            transform: translateY(-2px);
         }
 
-        /* Main section */
+
+        /* ---------- HERO ---------- */
+
         .hero {
             text-align: center;
-            padding: 70px 20px;
+            padding: 80px 20px;
             background-color: #e6dfd5;
         }
 
         .hero h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
+            font-size: 45px;
+            margin: 0 0 15px;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            font-weight: normal;
+            margin: 10px 0;
         }
 
         .hero p {
             font-size: 20px;
+            margin-top: 15px;
         }
 
-        /* Photo */
+
+        /* ---------- PHOTO ---------- */
+
         .photo {
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
         }
 
         .photo img {
-            width: 250px;
-            height: 300px;
+            width: 280px;
+            height: 350px;
             object-fit: cover;
-            border-radius: 10px;
-            border: 5px solid white;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            border-radius: 12px;
+            border: 6px solid white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
         }
 
-        /* About */
+        .photo p {
+            margin-top: 15px;
+            font-style: italic;
+            color: #666;
+        }
+
+
+        /* ---------- ABOUT ---------- */
+
         .about {
-            max-width: 800px;
+            max-width: 850px;
             margin: auto;
-            padding: 30px 20px;
+            padding: 30px 25px 50px;
             text-align: center;
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
         .about h2 {
-            font-size: 30px;
+            font-size: 32px;
+            margin-bottom: 20px;
         }
 
-        /* Buttons */
+        .about p {
+            font-size: 18px;
+        }
+
+
+        /* ---------- MEMORY SECTION ---------- */
+
+        .memory {
+            max-width: 850px;
+            margin: 0 auto 50px;
+            padding: 40px 25px;
+            background-color: white;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .memory h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .memory p {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+
+        /* ---------- BUTTONS ---------- */
+
         .buttons {
             text-align: center;
-            padding: 30px;
+            padding: 20px 20px 60px;
         }
 
         .button {
             display: inline-block;
-            padding: 14px 25px;
+            padding: 14px 28px;
             margin: 8px;
             background-color: #333;
             color: white;
             text-decoration: none;
             border-radius: 8px;
+            font-size: 17px;
+            transition: 0.3s;
         }
 
         .button:hover {
             background-color: #555;
+            transform: translateY(-2px);
         }
 
-        /* Footer */
+
+        /* ---------- FOOTER ---------- */
+
         footer {
             text-align: center;
-            padding: 25px;
-            margin-top: 30px;
+            padding: 30px 20px;
             background-color: #333;
             color: white;
         }
+
+        footer p {
+            margin: 8px;
+        }
+
+
+        /* ---------- MOBILE ---------- */
+
+        @media (max-width: 600px) {
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero h2 {
+                font-size: 23px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            nav a {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+
+            .photo img {
+                width: 230px;
+                height: 290px;
+            }
+
+        }
+
     </style>
 </head>
 
+
 <body>
 
-    <!-- Navigation Bar -->
+
+    <!-- ========================= -->
+    <!-- NAVIGATION -->
+    <!-- ========================= -->
+
     <nav>
-        <a href="index.html">🏠 Home</a>
-        <a href="memorial.html">🕊️ Memorial</a>
-        <a href="videos.html">🎥 Videos</a>
-        <a href="gallery.html">📷 Gallery</a>
+
+        <a href="index.html">
+            🏠 Home
+        </a>
+
+        <a href="George-Ferguson.html">
+            🕊️ Memorial
+        </a>
+
     </nav>
 
 
-    <!-- Welcome Section -->
-    <section class="hero">
-        <h1>In Loving Memory</h1>
+    <!-- ========================= -->
+    <!-- MAIN TITLE -->
+    <!-- ========================= -->
 
-        <p>George Edward Ferguson</p>
+    <section class="hero">
+
+        <h1>
+            In Loving Memory
+        </h1>
+
+        <h2>
+            George Edward Ferguson
+        </h2>
 
         <p>
             April 19, 1937 – October 10, 2023
         </p>
+
     </section>
 
 
-    <!-- Photo Section -->
+    <!-- ========================= -->
+    <!-- PHOTO -->
+    <!-- ========================= -->
+
     <section class="photo">
 
-        <!-- Replace this with George's photo -->
-        <img src="george.jpg" alt="George Edward Ferguson">
+        <!--
+        IMPORTANT:
+        Replace "george.jpg" with the exact
+        name of George's photo on GitHub.
+        -->
+
+        <img
+            src="george.jpg"
+            alt="George Edward Ferguson">
+
+        <p>
+            Forever remembered and cherished.
+        </p>
 
     </section>
 
 
-    <!-- About Section -->
+    <!-- ========================= -->
+    <!-- ABOUT GEORGE -->
+    <!-- ========================= -->
+
     <section class="about">
 
-        <h2>Remembering George</h2>
+        <h2>
+            Remembering George
+        </h2>
 
         <p>
-            This website is dedicated to the life and memory of
-            George Edward Ferguson.
+            This memorial website is dedicated to the life
+            and memory of George Edward Ferguson.
         </p>
 
         <p>
-            His life, memories, and the moments he shared with
-            family and friends will always be remembered and cherished.
+            George's life touched the lives of many people.
+            His memories, experiences, and the moments he
+            shared with family and friends will continue
+            to be remembered and cherished.
         </p>
 
     </section>
 
 
-    <!-- Website Buttons -->
+    <!-- ========================= -->
+    <!-- MEMORY SECTION -->
+    <!-- ========================= -->
+
+    <section class="memory">
+
+        <h2>
+            A Life to Remember
+        </h2>
+
+        <p>
+            Although George is no longer with us, the memories
+            he left behind will continue to live on through
+            the people who knew and loved him.
+        </p>
+
+        <p>
+            This page can be used to share photographs,
+            stories, videos, and special memories of George.
+        </p>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- BUTTONS -->
+    <!-- ========================= -->
+
     <section class="buttons">
 
-        <a href="memorial.html" class="button">
-            🕊️ Visit Memorial
+        <a
+            href="index.html"
+            class="button">
+            ← Return to Home
         </a>
 
-        <a href="videos.html" class="button">
-            🎥 Watch Videos
-        </a>
-
-        <a href="gallery.html" class="button">
-            📷 View Gallery
+        <a
+            href="George-Ferguson.html"
+            class="button">
+            🕊️ Memorial
         </a>
 
     </section>
 
 
-    <!-- Footer -->
+    <!-- ========================= -->
+    <!-- FOOTER -->
+    <!-- ========================= -->
+
     <footer>
 
         <p>
@@ -196,5 +364,7 @@
 
     </footer>
 
+
 </body>
+
 </html>
