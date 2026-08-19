@@ -1,158 +1,953 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forever Remembered</title>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Forever Remembered | Digital Memorials</title>
 
     <style>
-        body {
+
+        * {
+            box-sizing: border-box;
             margin: 0;
-            font-family: Georgia, serif;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
             background-color: #f8f5ef;
             color: #333;
-            text-align: center;
+            line-height: 1.7;
         }
 
-        header {
-            background-color: #2f3a3a;
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            background-color: #303a3a;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
             color: white;
-            padding: 60px 20px;
+            font-size: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 1px;
         }
 
-        header h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
         }
 
-        header p {
-            font-size: 20px;
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            color: #c8ad78;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(48,58,58,0.80),
+                    rgba(48,58,58,0.80)
+                ),
+                url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1800&q=80");
+
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 25px;
+            font-weight: normal;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            max-width: 700px;
+            margin: auto;
         }
 
         .button {
             display: inline-block;
-            margin-top: 20px;
-            padding: 14px 25px;
-            background-color: #b59b6d;
+            margin-top: 30px;
+            padding: 14px 30px;
+            background-color: #b49a68;
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            font-size: 16px;
         }
 
+        .button:hover {
+            background-color: #947b4d;
+        }
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
+
         section {
-            padding: 50px 20px;
-            max-width: 900px;
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
             margin: auto;
         }
 
-        h2 {
-            font-size: 32px;
-            color: #2f3a3a;
+        .section-title {
+            text-align: center;
+            color: #303a3a;
+            font-size: 38px;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 45px;
+            color: #666;
+            font-size: 17px;
+        }
+
+        /* =========================
+           WELCOME
+        ========================= */
+
+        .welcome {
+            background-color: white;
+        }
+
+        .welcome-content {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .welcome-content p {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        /* =========================
+           HOW IT WORKS
+        ========================= */
+
+        .how-it-works {
+            background-color: #f1eee7;
         }
 
         .steps {
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns:
+                repeat(4, 1fr);
             gap: 25px;
-            flex-wrap: wrap;
         }
 
         .step {
-            background: white;
-            padding: 25px;
-            width: 220px;
+            background-color: white;
+            padding: 35px 25px;
+            text-align: center;
             border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.07);
         }
 
-        footer {
-            background-color: #2f3a3a;
+        .step-number {
+            width: 55px;
+            height: 55px;
+            margin: 0 auto 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background-color: #b49a68;
             color: white;
-            padding: 25px;
+
+            border-radius: 50%;
+
+            font-size: 22px;
         }
+
+        .step h3 {
+            color: #303a3a;
+            margin-bottom: 12px;
+        }
+
+        .step p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        /* =========================
+           SERVICES
+        ========================= */
+
+        .services {
+            background-color: white;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service {
+            padding: 35px 25px;
+            border: 1px solid #e1ddd4;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .service-icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .service h3 {
+            color: #303a3a;
+            margin-bottom: 12px;
+        }
+
+        .service p {
+            color: #666;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background-color: #f1eee7;
+        }
+
+        .about-content {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        /* =========================
+           PRIVACY
+        ========================= */
+
+        .privacy {
+            background-color: white;
+        }
+
+        .privacy-box {
+            max-width: 850px;
+            margin: auto;
+            background-color: #f8f5ef;
+            padding: 35px;
+            border-left: 5px solid #b49a68;
+            border-radius: 5px;
+        }
+
+        .privacy-box h3 {
+            color: #303a3a;
+            margin-bottom: 12px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background-color: #303a3a;
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact .section-subtitle {
+            color: #ddd;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            font-size: 17px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background-color: #222a2a;
+            color: #ccc;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero h2 {
+                font-size: 21px;
+            }
+
+            .steps {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .service-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            .hero {
+                min-height: 75vh;
+            }
+
+            .hero h1 {
+                font-size: 37px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 18px;
+            }
+
+            .section-title {
+                font-size: 31px;
+            }
+
+        }
+
     </style>
+
 </head>
+
 
 <body>
 
-<header>
-    <h1>Forever Remembered</h1>
-    <p>Honoring Lives. Preserving Memories.</p>
 
-    <a href="#how-it-works" class="button">
-        Learn How It Works
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <a href="index.html" class="logo">
+        Forever Remembered
     </a>
+
+    <ul>
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#how-it-works">
+                How It Works
+            </a>
+        </li>
+
+        <li>
+            <a href="#services">
+                Services
+            </a>
+        </li>
+
+        <li>
+            <a href="#about">
+                About
+            </a>
+        </li>
+
+        <li>
+            <a href="#contact">
+                Contact
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- =========================
+     HERO / HOME
+========================= -->
+
+<header class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            Forever Remembered
+        </h1>
+
+        <h2>
+            Honoring Lives. Preserving Memories.
+        </h2>
+
+        <p>
+            Beautiful digital memorials created to
+            celebrate the lives, stories, and memories
+            of those we love.
+        </p>
+
+        <a
+            href="#how-it-works"
+            class="button">
+            Discover How It Works
+        </a>
+
+    </div>
+
 </header>
 
-<section>
-    <h2>A Place to Remember</h2>
 
-    <p>
-        We create beautiful digital memorials that allow
-        families and friends to remember, celebrate, and
-        honor the lives of those they love.
-    </p>
-</section>
+<!-- =========================
+     WELCOME
+========================= -->
 
-<section id="how-it-works">
+<section class="welcome">
 
-    <h2>How It Works</h2>
+    <div class="container">
 
-    <div class="steps">
+        <div class="welcome-content">
 
-        <div class="step">
-            <h3>1. Share Their Story</h3>
-            <p>
-                Provide their photos, information, memories,
-                and life story.
+            <h2 class="section-title">
+                A Place to Remember
+            </h2>
+
+            <p class="section-subtitle">
+                Every life has a story worth remembering.
             </p>
-        </div>
 
-        <div class="step">
-            <h3>2. We Create Their Memorial</h3>
             <p>
-                We create a beautiful personal memorial
-                website dedicated to their life.
+                Forever Remembered creates personal
+                digital memorials that give families
+                a lasting place to honor and celebrate
+                the lives of their loved ones.
             </p>
-        </div>
 
-        <div class="step">
-            <h3>3. Receive Your QR Code</h3>
             <p>
-                Your memorial receives a unique QR code
-                that connects directly to their page.
+                Each memorial can include photographs,
+                a life story, important moments,
+                memories, and messages from family
+                and friends.
             </p>
-        </div>
 
-        <div class="step">
-            <h3>4. Keep Their Memory Alive</h3>
-            <p>
-                Family and friends can scan the QR code
-                and visit their memorial.
-            </p>
         </div>
 
     </div>
 
 </section>
 
-<section>
 
-    <h2>Our Purpose</h2>
+<!-- =========================
+     HOW IT WORKS
+========================= -->
 
-    <p>
-        Every life has a story worth remembering.
-        Our goal is to create a lasting digital place
-        where those stories can be preserved for
-        generations to come.
-    </p>
+<section
+    class="how-it-works"
+    id="how-it-works">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            How It Works
+        </h2>
+
+        <p class="section-subtitle">
+            Creating a meaningful digital memorial
+            is simple.
+        </p>
+
+
+        <div class="steps">
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    1
+                </div>
+
+                <h3>
+                    Share Their Story
+                </h3>
+
+                <p>
+                    Provide us with photographs,
+                    information, memories, and
+                    important details about your
+                    loved one.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    2
+                </div>
+
+                <h3>
+                    We Create the Memorial
+                </h3>
+
+                <p>
+                    We create a beautiful personal
+                    digital memorial dedicated to
+                    their life and legacy.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <h3>
+                    Receive Your QR Code
+                </h3>
+
+                <p>
+                    Each memorial receives its own
+                    unique QR code that connects
+                    directly to the memorial.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    4
+                </div>
+
+                <h3>
+                    Remember Anytime
+                </h3>
+
+                <p>
+                    Family and friends can scan the
+                    QR code with a phone and visit
+                    the memorial whenever they wish.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
 
 </section>
 
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section
+    class="services"
+    id="services">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Our Memorial Services
+        </h2>
+
+        <p class="section-subtitle">
+            A personal space created to preserve
+            memories for years to come.
+        </p>
+
+
+        <div class="service-grid">
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    🕊️
+                </div>
+
+                <h3>
+                    Digital Memorial
+                </h3>
+
+                <p>
+                    A dedicated online memorial
+                    celebrating your loved one's
+                    life and legacy.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    📷
+                </div>
+
+                <h3>
+                    Photo Memories
+                </h3>
+
+                <p>
+                    Preserve meaningful photographs
+                    and memories in one special place.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    📱
+                </div>
+
+                <h3>
+                    Memorial QR Code
+                </h3>
+
+                <p>
+                    A unique QR code provides quick
+                    access to the person's memorial.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    ❤️
+                </div>
+
+                <h3>
+                    Life Stories
+                </h3>
+
+                <p>
+                    Share their story, achievements,
+                    memories, and the moments that
+                    made their life special.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    🌹
+                </div>
+
+                <h3>
+                    Tributes
+                </h3>
+
+                <p>
+                    Give family and friends a place
+                    to share loving messages and
+                    memories.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    🕯️
+                </div>
+
+                <h3>
+                    Lasting Memories
+                </h3>
+
+                <p>
+                    Create a digital place where
+                    their memory can continue to
+                    be cherished.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section
+    class="about"
+    id="about">
+
+    <div class="container">
+
+        <div class="about-content">
+
+            <h2 class="section-title">
+                Our Purpose
+            </h2>
+
+            <p>
+                Losing someone we love can leave
+                behind countless memories, stories,
+                photographs, and moments that deserve
+                to be preserved.
+            </p>
+
+            <p>
+                Our goal is to provide families with
+                a beautiful digital space where those
+                memories can be kept together and
+                shared with the people who matter most.
+            </p>
+
+            <p>
+                Because while a person may no longer
+                be with us, the memories they created
+                can continue to live on.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRIVACY
+========================= -->
+
+<section class="privacy">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Your Memorial. Your Choice.
+        </h2>
+
+        <p class="section-subtitle">
+            Families should have control over how
+            their loved one's memorial is shared.
+        </p>
+
+
+        <div class="privacy-box">
+
+            <h3>
+                Private Memorials
+            </h3>
+
+            <p>
+                Memorials can be created with privacy
+                options so families can decide who
+                should have access to their loved
+                one's story and memories.
+            </p>
+
+            <p>
+                The QR code can provide a direct way
+                for family and friends to reach the
+                memorial.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section
+    class="contact"
+    id="contact">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Contact Us
+        </h2>
+
+        <p class="section-subtitle">
+            Interested in creating a digital memorial?
+            Get in touch with us.
+        </p>
+
+
+        <div class="contact-info">
+
+            <div class="contact-item">
+                📧 Email:
+                your@email.com
+            </div>
+
+            <div class="contact-item">
+                📞 Phone:
+                (501) 000-0000
+            </div>
+
+            <div class="contact-item">
+                📍 Location:
+                Belize
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
-    <p>© 2026 Forever Remembered</p>
-    <p>Honoring lives. Preserving memories.</p>
+
+    <p>
+        <strong>
+            Forever Remembered
+        </strong>
+    </p>
+
+    <p>
+        Honoring lives. Preserving memories.
+    </p>
+
+    <p>
+        © 2026 Forever Remembered.
+        All rights reserved.
+    </p>
+
 </footer>
 
+
 </body>
+
 </html>
+```
