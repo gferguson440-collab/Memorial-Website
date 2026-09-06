@@ -1,721 +1,1313 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Mr. Harrison Wright | Forever Remembered</title>
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Georgia, "Times New Roman", serif;
-            color: #333;
-            background: #f8f6f1;
-            line-height: 1.7;
-        }
-
-        /* NAVIGATION */
-
-        nav {
-            background: #2f3b46;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 7%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 15px;
-        }
-
-        nav ul li a:hover {
-            color: #d5c39b;
-        }
-
-        /* BACK TO HOME */
-
-        .back-area {
-            text-align: center;
-            background: #eeeae2;
-            padding: 18px;
-        }
-
-        .back-button {
-            display: inline-block;
-            background: #b49a68;
-            color: white;
-            text-decoration: none;
-            padding: 12px 25px;
-            border-radius: 6px;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-
-        .back-button:hover {
-            background: #947b4d;
-            transform: translateY(-2px);
-        }
-
-        /* MEMORIAL HERO */
-
-        .memorial-hero {
-            background:
-                linear-gradient(
-                    rgba(0,0,0,0.5),
-                    rgba(0,0,0,0.5)
-                ),
-                url("harrison.jpg");
-
-            background-size: cover;
-            background-position: center;
-
-            min-height: 70vh;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-
-            color: white;
-            padding: 40px 20px;
-        }
-
-        .memorial-content {
-            max-width: 900px;
-            animation: fadeIn 1.5s ease;
-        }
-
-        /* MAIN PHOTO */
-
-        .memorial-content img {
-            width: 220px;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 6px solid white;
-            margin-bottom: 25px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.4);
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .memorial-content h1 {
-            font-size: 52px;
-            margin-bottom: 12px;
-        }
-
-        .dates {
-            font-size: 23px;
-            font-style: italic;
-        }
-
-        /* SECTIONS */
-
-        section {
-            padding: 70px 7%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .section-title h2 {
-            color: #2f3b46;
-            font-size: 35px;
-            margin-bottom: 10px;
-        }
-
-        .section-title p {
-            color: #666;
-        }
-
-        /* LIFE STORY */
-
-        .story {
-            max-width: 900px;
-            margin: auto;
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-        }
-
-        .story p {
-            font-size: 18px;
-            margin-bottom: 18px;
-        }
-
-        /* MEMORIES */
-
-        .memories {
-            background: #eeeae2;
-        }
-
-        .memory-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .memory {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-            transition: 0.3s;
-        }
-
-        .memory:hover {
-            transform: translateY(-5px);
-        }
-
-        .memory h3 {
-            color: #2f3b46;
-            margin-bottom: 12px;
-        }
-
-        /* PHOTO GALLERY */
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .gallery img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 8px;
-            display: block;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.15);
-            transition: 0.3s;
-        }
-
-        .gallery img:hover {
-            transform: scale(1.03);
-        }
-
-        /* TRIBUTE */
-
-        .tribute {
-            max-width: 900px;
-            margin: auto;
-            text-align: center;
-            background: white;
-            padding: 45px;
-            border-radius: 10px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-        }
-
-        .tribute p {
-            font-size: 20px;
-            font-style: italic;
-        }
-
-        /* FOOTER */
-
-        footer {
-            background: #2f3b46;
-            color: white;
-            text-align: center;
-            padding: 35px 20px;
-        }
-
-        footer p {
-            margin: 5px 0;
-        }
-
-        /* ANIMATION */
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 800px) {
-
-            nav {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            nav ul {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .memorial-content h1 {
-                font-size: 40px;
-            }
-
-            .memory-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .gallery {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 550px) {
-
-            .memorial-content h1 {
-                font-size: 32px;
-            }
-
-            .dates {
-                font-size: 19px;
-            }
-
-            .memorial-content img {
-                width: 180px;
-                height: 180px;
-            }
-
-            .memory-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .gallery {
-                grid-template-columns: 1fr;
-            }
-
-            .story,
-            .tribute {
-                padding: 25px;
-            }
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Harrison Wright | Dutty Harry</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050505;
+    color: #f4eee2;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+:root {
+    --gold: #d8bb80;
+    --gold-light: #f0d9a2;
+    --dark: #050505;
+    --dark2: #0d0d0d;
+    --cream: #f4eee2;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 22px 20px;
+
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(216, 187, 128, 0.35);
+}
+
+nav a {
+    color: var(--gold);
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 3px;
+
+    margin: 0 20px;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.35),
+            rgba(0,0,0,0.90)
+        ),
+        url("./harrison.jpg") center center / cover no-repeat;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 10%,
+            rgba(0,0,0,0.55) 100%
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1200px;
+
+    padding: 120px 25px 70px;
+}
+
+.in-memory {
+    color: var(--gold);
+
+    font-size: 15px;
+    letter-spacing: 7px;
+
+    margin-bottom: 25px;
+
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(55px, 10vw, 125px);
+
+    font-weight: 500;
+    line-height: 0.95;
+
+    color: #f5efe5;
+
+    text-shadow: 0 5px 30px black;
+
+    word-wrap: break-word;
+}
+
+.nickname {
+    font-family: 'Great Vibes', cursive;
+
+    font-size: clamp(45px, 6vw, 72px);
+
+    color: var(--gold);
+
+    margin: 15px 0 10px;
+}
+
+.dates {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 25px;
+
+    letter-spacing: 3px;
+
+    color: #ddd2c0;
+
+    margin-bottom: 25px;
+}
+
+.hero-quote {
+    max-width: 700px;
+
+    margin: 0 auto 35px;
+
+    color: #ddd;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 20px;
+
+    font-style: italic;
+
+    line-height: 1.6;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hero-buttons a {
+    display: inline-block;
+
+    color: var(--gold);
+
+    text-decoration: none;
+
+    border: 1px solid var(--gold);
+
+    padding: 12px 24px;
+
+    border-radius: 30px;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    transition: 0.35s;
+}
+
+.hero-buttons a:hover {
+    background: var(--gold);
+    color: black;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    padding: 100px 8%;
+    position: relative;
+}
+
+.section-dark {
+    background: #050505;
+}
+
+.section-light-dark {
+    background: #0b0b0b;
+}
+
+.section-title {
+    text-align: center;
+
+    color: var(--gold);
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 50px;
+
+    font-weight: 500;
+
+    margin-bottom: 15px;
+}
+
+.section-line {
+    width: 70px;
+    height: 1px;
+
+    background: var(--gold);
+
+    margin: 0 auto 50px;
+}
+
+/* =========================
+   STORY
+========================= */
+
+.story-container {
+    max-width: 1000px;
+    margin: auto;
+
+    text-align: center;
+}
+
+.story-container p {
+    color: #d3cdc2;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 21px;
+
+    line-height: 1.8;
+
+    margin-bottom: 22px;
+}
+
+/* =========================
+   FAMILY
+========================= */
+
+.family-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.family-card {
+    background: #101010;
+
+    border: 1px solid rgba(216,187,128,0.25);
+
+    padding: 30px;
+
+    transition: 0.3s;
+}
+
+.family-card:hover {
+    border-color: var(--gold);
+
+    transform: translateY(-4px);
+}
+
+.family-card h3 {
+    color: var(--gold);
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 28px;
+
+    margin-bottom: 15px;
+}
+
+.family-card p {
+    color: #ccc;
+
+    line-height: 1.8;
+}
+
+/* =========================
+   LIFE
+========================= */
+
+.life-container {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px;
+
+    align-items: center;
+}
+
+.life-image {
+    width: 100%;
+
+    height: 500px;
+
+    object-fit: cover;
+
+    border: 1px solid rgba(216,187,128,0.35);
+}
+
+.life-text h3 {
+    color: var(--gold);
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 36px;
+
+    margin-bottom: 20px;
+}
+
+.life-text p {
+    color: #d0cbc2;
+
+    line-height: 1.9;
+
+    margin-bottom: 18px;
+}
+
+/* =========================
+   MEMORIES / GALLERY
+========================= */
+
+.gallery {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.gallery-item {
+    height: 330px;
+
+    overflow: hidden;
+
+    background: #111;
+
+    border: 1px solid rgba(216,187,128,0.25);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.06);
+}
+
+/* =========================
+   SERVICE
+========================= */
+
+.service-container {
+    max-width: 1000px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.service-container h3 {
+    color: var(--gold);
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 34px;
+
+    margin-bottom: 25px;
+}
+
+.service-container p {
+    color: #d0cbc2;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 21px;
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+/* =========================
+   OREO
+========================= */
+
+.oreo {
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.7),
+            rgba(0,0,0,0.9)
+        ),
+        url("./harrison4.jpg") center / cover;
+}
+
+.oreo h2 {
+    font-family: 'Great Vibes', cursive;
+
+    color: var(--gold);
+
+    font-size: 65px;
+
+    margin-bottom: 10px;
+}
+
+.oreo p {
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #ddd;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 22px;
+
+    line-height: 1.7;
+}
+
+/* =========================
+   FUNERAL
+========================= */
+
+.funeral {
+    text-align: center;
+
+    background: #0b0b0b;
+
+    border-top: 1px solid rgba(216,187,128,0.2);
+
+    border-bottom: 1px solid rgba(216,187,128,0.2);
+}
+
+.funeral h2 {
+    color: var(--gold);
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 45px;
+
+    margin-bottom: 25px;
+}
+
+.funeral p {
+    color: #ddd;
+
+    line-height: 1.9;
+
+    margin: 8px 0;
+}
+
+.funeral .date {
+    color: var(--gold);
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 28px;
+}
+
+/* =========================
+   LEGACY
+========================= */
+
+.legacy {
+    text-align: center;
+
+    background: #050505;
+}
+
+.legacy-container {
+    max-width: 850px;
+
+    margin: auto;
+}
+
+.legacy p {
+    color: #d5d0c7;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 23px;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+}
+
+.final-quote {
+    color: var(--gold);
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 29px;
+
+    font-style: italic;
+
+    line-height: 1.6;
+
+    margin-top: 40px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    padding: 50px 20px;
+
+    background: #000;
+
+    border-top: 1px solid rgba(216,187,128,0.25);
+}
+
+footer .name {
+    font-family: 'Great Vibes', cursive;
+
+    color: var(--gold);
+
+    font-size: 45px;
+
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #888;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content > * {
+    animation: fadeUp 1.2s ease forwards;
+}
+
+.hero-content .in-memory {
+    animation-delay: 0.1s;
+}
+
+.hero-content h1 {
+    animation-delay: 0.2s;
+}
+
+.hero-content .nickname {
+    animation-delay: 0.35s;
+}
+
+.hero-content .dates {
+    animation-delay: 0.45s;
+}
+
+.hero-content .hero-quote {
+    animation-delay: 0.55s;
+}
+
+.hero-content .hero-buttons {
+    animation-delay: 0.65s;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        padding: 15px 8px;
+
+        overflow-x: auto;
+
+        justify-content: flex-start;
+
+        white-space: nowrap;
+    }
+
+    nav a {
+        font-size: 9px;
+
+        letter-spacing: 2px;
+
+        margin: 0 10px;
+    }
+
+    .hero {
+        min-height: 100svh;
+
+        background-position: center center;
+    }
+
+    .hero-content {
+        padding: 120px 18px 50px;
+    }
+
+    .in-memory {
+        font-size: 10px;
+
+        letter-spacing: 4px;
+
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 13vw, 70px);
+
+        line-height: 0.95;
+
+        max-width: 100%;
+
+        overflow-wrap: break-word;
+    }
+
+    .nickname {
+        font-size: clamp(38px, 12vw, 58px);
+    }
+
+    .dates {
+        font-size: 19px;
+
+        letter-spacing: 2px;
+    }
+
+    .hero-quote {
+        font-size: 18px;
+    }
+
+    .hero-buttons a {
+        padding: 10px 18px;
+
+        font-size: 9px;
+    }
+
+    section {
+        padding: 70px 6%;
+    }
+
+    .section-title {
+        font-size: 40px;
+    }
+
+    .story-container p {
+        font-size: 19px;
+    }
+
+    .family-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .life-container {
+        grid-template-columns: 1fr;
+    }
+
+    .life-image {
+        height: 380px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+    }
+
+    .gallery-item {
+        height: 220px;
+    }
+
+    .oreo h2 {
+        font-size: 50px;
+    }
+
+    .oreo p {
+        font-size: 19px;
+    }
+
+    .funeral h2 {
+        font-size: 37px;
+    }
+
+    .legacy p {
+        font-size: 20px;
+    }
+
+    .final-quote {
+        font-size: 24px;
+    }
+}
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 430px) {
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .nickname {
+        font-size: 42px;
+    }
+
+    .dates {
+        font-size: 17px;
+    }
+
+    .hero-quote {
+        font-size: 16px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        height: 300px;
+    }
+}
+
+</style>
 </head>
+
 
 <body>
 
-    <!-- NAVIGATION -->
+<!-- =========================
+     NAVIGATION
+========================= -->
 
-    <nav>
+<nav>
+    <a href="#story">STORY</a>
+    <a href="#family">FAMILY</a>
+    <a href="#life">LIFE</a>
+    <a href="#memories">MEMORIES</a>
+    <a href="#service">SERVICE</a>
+</nav>
 
-        <div class="logo">
-            Forever Remembered
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="in-memory">
+            IN LOVING MEMORY
         </div>
 
-        <ul>
+        <h1>
+            Harrison Wright
+        </h1>
 
-            <li>
-                <a href="#memorial">Memorial</a>
-            </li>
+        <div class="nickname">
+            Dutty Harry
+        </div>
 
-            <li>
-                <a href="#story">Life Story</a>
-            </li>
+        <div class="dates">
+            September 8, 1968 — September 1, 2026
+        </div>
 
-            <li>
-                <a href="#memories">Memories</a>
-            </li>
+        <p class="hero-quote">
+            A life remembered through love, laughter, family,
+            friendship, hard work, and countless memories.
+        </p>
 
-            <li>
-                <a href="#gallery">Gallery</a>
-            </li>
+        <div class="hero-buttons">
 
-            <li>
-                <a href="#tribute">Tribute</a>
-            </li>
+            <a href="#story">
+                HIS STORY
+            </a>
 
-        </ul>
+            <a href="#family">
+                FAMILY
+            </a>
 
-    </nav>
+            <a href="#memories">
+                MEMORIES
+            </a>
 
+            <a href="#service">
+                SERVICE
+            </a>
 
-    <!-- BACK TO HOME -->
-
-    <div class="back-area">
-
-        <a href="index.html?from=harrison" class="back-button">
-            ← Back to Home
-        </a>
+        </div>
 
     </div>
 
+</header>
 
-    <!-- MEMORIAL HERO -->
 
-    <section class="memorial-hero" id="memorial">
+<!-- =========================
+     HIS STORY
+========================= -->
 
-        <div class="memorial-content">
+<section id="story" class="section-dark">
 
-            <!-- HARRISON'S PHOTO -->
+    <h2 class="section-title">
+        His Story
+    </h2>
 
+    <div class="section-line"></div>
+
+    <div class="story-container">
+
+        <p>
+            Harrison Wright, lovingly known to many as
+            <strong>“Dutty Harry,”</strong> was born on
+            September 8, 1968.
+        </p>
+
+        <p>
+            He was the son of Louanna Gillett and the grandson
+            of Hortence Gillett. He attended Grace Primary School
+            and later continued his education at Sec Two.
+        </p>
+
+        <p>
+            Harrison was a hardworking man who could turn his
+            hands to almost anything. He worked as a bartender
+            at Caye Chapel before eventually beginning a new
+            chapter of his life in San Pedro.
+        </p>
+
+        <p>
+            Harrison had a natural talent for fixing things.
+            He worked on golf carts, boats, motorcycles and
+            engines, and he was always willing to help someone
+            solve a problem.
+        </p>
+
+        <p>
+            His life was filled with family, friendship,
+            laughter and memories that will remain with the
+            people who knew and loved him.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FAMILY
+========================= -->
+
+<section id="family" class="section-light-dark">
+
+    <h2 class="section-title">
+        Family
+    </h2>
+
+    <div class="section-line"></div>
+
+    <div class="family-grid">
+
+        <div class="family-card">
+
+            <h3>His Children</h3>
+
+            <p>
+                Allison Wright<br>
+                Jahson Wright<br>
+                Ason McField<br>
+                Alexander McField<br>
+                Harrison McField<br>
+                Cashema McField/Ferguson<br>
+                Carshena McField
+            </p>
+
+        </div>
+
+
+        <div class="family-card">
+
+            <h3>His Grandchildren</h3>
+
+            <p>
+                Jahliyah Wright<br>
+                Miracle McField<br>
+                Heaven McField<br>
+                Ason Torres<br>
+                Jahniyah Ferguson<br>
+                George Ferguson Jr.<br>
+                Jahfeney Ferguson<br>
+                Jamar Pitts<br>
+                Jahnellie Pitts<br>
+                Alfonso Tosta Jr.
+            </p>
+
+        </div>
+
+
+        <div class="family-card">
+
+            <h3>His Mother & Grandmother</h3>
+
+            <p>
+                Mother: Louanna Gillett<br><br>
+                Grandmother: Hortence Gillett
+            </p>
+
+        </div>
+
+
+        <div class="family-card">
+
+            <h3>His Brother & Friends</h3>
+
+            <p>
+                Brother: Allison McField
+                <br><br>
+                Close friends included Lucio,
+                Russian and Wayne.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LIFE
+========================= -->
+
+<section id="life" class="section-dark">
+
+    <h2 class="section-title">
+        His Life
+    </h2>
+
+    <div class="section-line"></div>
+
+    <div class="life-container">
+
+        <img
+            src="./harrison2.jpg"
+            alt="Harrison Wright"
+            class="life-image"
+        >
+
+        <div class="life-text">
+
+            <h3>A Man Who Could Fix Almost Anything</h3>
+
+            <p>
+                Harrison had a special ability to understand
+                machines and figure out how things worked.
+            </p>
+
+            <p>
+                Golf carts, boats, motorcycles and engines
+                were among the many things he worked on.
+                Whenever someone needed help solving a problem,
+                Harrison was often the person they could turn to.
+            </p>
+
+            <p>
+                His willingness to help others was one of the
+                qualities that made him special to his family,
+                friends and community.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MEMORIES
+========================= -->
+
+<section id="memories" class="section-light-dark">
+
+    <h2 class="section-title">
+        Memories
+    </h2>
+
+    <div class="section-line"></div>
+
+    <div class="gallery">
+
+        <div class="gallery-item">
             <img
                 src="./harrison.jpg"
-                alt="Photo of Mr. Harrison Wright"
-                onerror="this.style.display='none';"
+                alt="Memory of Harrison Wright"
             >
-
-            <h1>Mr. Harrison Wright</h1>
-
-            <p class="dates">
-                September 8, 1968 – September 1, 2026
-            </p>
-
-            <p style="margin-top:15px; font-size:20px;">
-                Forever Remembered
-            </p>
-
         </div>
 
-    </section>
-
-
-    <!-- LIFE STORY -->
-
-    <section id="story">
-
-        <div class="section-title">
-
-            <h2>Life Story</h2>
-
-            <p>
-                Remembering the life and legacy of Mr. Harrison Wright.
-            </p>
-
-        </div>
-
-        <div class="story">
-
-            <p>
-                Harrison Wright, lovingly known by many as
-                <strong>“Dutty Harry”</strong>, was a cherished
-                father, grandfather, brother, friend, mechanic,
-                and beloved member of his community.
-            </p>
-
-            <p>
-                Born on September 8, 1968, Harrison grew up with
-                strong family roots. He attended Grace Primary School
-                and later Sec Two before beginning his working life.
-            </p>
-
-            <p>
-                He worked as a bartender at Caye Chapel, where he
-                met Abby Williams. They were married on November 6,
-                1996, and later made their home in San Pedro, where
-                they began raising their family.
-            </p>
-
-            <p>
-                Harrison was known for being someone who could fix
-                almost anything. He worked on golf carts, boats,
-                motorcycles, and engines, and was always willing to
-                help someone solve a problem.
-            </p>
-
-            <p>
-                His kindness, loyalty, hard work, humor, and love
-                for his family created memories that will remain
-                with everyone who knew him.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- MEMORIES -->
-
-    <section class="memories" id="memories">
-
-        <div class="section-title">
-
-            <h2>Memories</h2>
-
-            <p>
-                The moments and qualities that made Harrison special.
-            </p>
-
-        </div>
-
-
-        <div class="memory-grid">
-
-            <div class="memory">
-
-                <h3>Family</h3>
-
-                <p>
-                    Harrison was a loving father and grandfather.
-                    His family was an important part of his life and
-                    his greatest legacy.
-                </p>
-
-            </div>
-
-
-            <div class="memory">
-
-                <h3>A Helping Hand</h3>
-
-                <p>
-                    Whether it was a boat, golf cart, motorcycle,
-                    or engine, Harrison was always ready to help
-                    someone find a solution.
-                </p>
-
-            </div>
-
-
-            <div class="memory">
-
-                <h3>Oreo</h3>
-
-                <p>
-                    His beloved dog Oreo was another special part
-                    of his life and will remain part of the memories
-                    shared by those who loved him.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FAMILY -->
-
-    <section>
-
-        <div class="section-title">
-
-            <h2>His Family</h2>
-
-            <p>
-                A family that will continue carrying his memory forward.
-            </p>
-
-        </div>
-
-
-        <div class="story">
-
-            <p>
-                Harrison is lovingly remembered by his seven children:
-            </p>
-
-            <p>
-                <strong>
-                    Allison Wright<br>
-                    Jahson Wright<br>
-                    Ason McField<br>
-                    Alexander McField<br>
-                    Harrison McField<br>
-                    Cashema McField/Ferguson<br>
-                    Carshena McField
-                </strong>
-            </p>
-
-            <p>
-                He was also a proud grandfather to ten grandchildren:
-            </p>
-
-            <p>
-                Jahliyah Wright, Miracle McField, Heaven McField,
-                Ason Torres, Jahniyah Ferguson, George Ferguson Jr.,
-                Jahfeney Ferguson, Jamar Pitts, Jahnellie Pitts,
-                and Alfonso Tosta Jr.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- PHOTO GALLERY -->
-
-    <section id="gallery">
-
-        <div class="section-title">
-
-            <h2>Photo Gallery</h2>
-
-            <p>
-                Special moments and memories.
-            </p>
-
-        </div>
-
-
-        <div class="gallery">
-
-            <!-- USES THE ACTUAL FILE IN YOUR GITHUB REPOSITORY -->
-
-            <img
-                src="./harrison.jpg"
-                alt="Mr. Harrison Wright"
-            >
-
+        <div class="gallery-item">
             <img
                 src="./harrison2.jpg"
                 alt="Memory of Harrison Wright"
-                onerror="this.style.display='none';"
             >
+        </div>
 
+        <div class="gallery-item">
             <img
                 src="./harrison3.jpg"
                 alt="Memory of Harrison Wright"
-                onerror="this.style.display='none';"
             >
+        </div>
 
+        <div class="gallery-item">
             <img
                 src="./harrison4.jpg"
                 alt="Memory of Harrison Wright"
-                onerror="this.style.display='none';"
             >
+        </div>
 
+        <div class="gallery-item">
             <img
                 src="./harrison5.jpg"
                 alt="Memory of Harrison Wright"
-                onerror="this.style.display='none';"
             >
-
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- FUNERAL SERVICE -->
+<!-- =========================
+     OREO
+========================= -->
 
-    <section>
+<section class="oreo">
 
-        <div class="section-title">
+    <h2>Oreo</h2>
 
-            <h2>Funeral Service</h2>
+    <p>
+        Harrison's beloved dog, Oreo, was also an important
+        part of his life. The memories shared with Oreo will
+        remain part of the story of a man who loved deeply
+        and cared for those around him.
+    </p>
 
-            <p>
-                In loving memory of Harrison Wright.
-            </p>
-
-        </div>
-
-
-        <div class="story" style="text-align:center;">
-
-            <h2 style="color:#2f3b46; margin-bottom:15px;">
-                Sunday, September 6, 2026
-            </h2>
-
-            <p>
-                <strong>1:00 P.M.</strong>
-            </p>
-
-            <p>
-                King's Park Church of the Nazarene
-            </p>
-
-            <p>
-                31 Princess Margaret Drive<br>
-                Belize City, Belize
-            </p>
-
-        </div>
-
-    </section>
+</section>
 
 
-    <!-- TRIBUTE -->
+<!-- =========================
+     SERVICE
+========================= -->
 
-    <section id="tribute">
+<section id="service" class="section-dark">
 
-        <div class="section-title">
+    <h2 class="section-title">
+        Service & Friendship
+    </h2>
 
-            <h2>In Loving Memory</h2>
+    <div class="section-line"></div>
 
-        </div>
+    <div class="service-container">
 
-        <div class="tribute">
-
-            <p>
-                “Those we love never truly leave us;
-                their memories live on in our hearts,
-                their laughter echoes in our lives,
-                and their love remains forever.”
-            </p>
-
-            <p style="margin-top:25px;">
-                Rest peacefully, Harrison “Dutty Harry” Wright.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-
-    <footer>
+        <h3>A Helping Hand</h3>
 
         <p>
-            <strong>Forever Remembered</strong>
+            Harrison was known for helping people whenever
+            he could. Whether it involved repairing an engine,
+            fixing a golf cart, working on a boat or simply
+            helping someone solve a problem, he was willing
+            to lend a hand.
         </p>
 
         <p>
-            Honoring the life and memory of Mr. Harrison Wright.
+            Special memories are shared with Jean Villatoro,
+            George Ferguson, Alfonso Tosta and Ethel Villatoro,
+            along with the many friends and family members
+            whose lives he touched.
         </p>
 
-        <p style="margin-top:12px;">
-            September 8, 1968 – September 1, 2026
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SURNAME STORY
+========================= -->
+
+<section class="section-light-dark">
+
+    <h2 class="section-title">
+        A Part of His Story
+    </h2>
+
+    <div class="section-line"></div>
+
+    <div class="story-container">
+
+        <p>
+            In 2011, Harrison changed his surname from Gillett
+            to Wright through deed poll. His family remembers
+            the questions and conversations surrounding the
+            different surnames carried by members of the family.
         </p>
 
-    </footer>
+        <p>
+            It became another part of Harrison's unique story —
+            a story that will continue to be remembered by
+            those who knew him.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FUNERAL
+========================= -->
+
+<section class="funeral">
+
+    <h2>
+        Funeral Service
+    </h2>
+
+    <p class="date">
+        Sunday, September 6, 2026
+    </p>
+
+    <p>
+        1:00 P.M.
+    </p>
+
+    <p>
+        King's Park Church of the Nazarene
+    </p>
+
+    <p>
+        31 Princess Margaret Drive
+    </p>
+
+    <p>
+        Belize City, Belize
+    </p>
+
+</section>
+
+
+<!-- =========================
+     LEGACY
+========================= -->
+
+<section class="legacy">
+
+    <h2 class="section-title">
+        His Legacy
+    </h2>
+
+    <div class="section-line"></div>
+
+    <div class="legacy-container">
+
+        <p>
+            Harrison will be remembered for his kindness,
+            wisdom, hard work, loyalty, generosity and love
+            for his family and friends.
+        </p>
+
+        <p>
+            His laughter, stories, friendship and willingness
+            to help others created memories that will remain
+            long after his passing.
+        </p>
+
+        <p>
+            Though he is no longer here in person, the impact
+            he made on the lives around him will continue.
+        </p>
+
+        <div class="final-quote">
+
+            “Those we love never truly leave us;
+            their memories live on in our hearts,
+            their laughter echoes in our lives,
+            and their love remains forever.”
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="name">
+        Harrison Wright
+    </div>
+
+    <p>
+        FOREVER REMEMBERED • FOREVER LOVED
+    </p>
+
+</footer>
 
 
 </body>
-
 </html>
