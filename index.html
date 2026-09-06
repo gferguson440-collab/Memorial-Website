@@ -2,14 +2,10 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Forever Remembered | Digital Memorials</title>
-
 
     <style>
 
@@ -19,11 +15,9 @@
             padding: 0;
         }
 
-
         html {
             scroll-behavior: smooth;
         }
-
 
         body {
             font-family: Georgia, "Times New Roman", serif;
@@ -32,7 +26,6 @@
             line-height: 1.7;
         }
 
-
         /* =========================
            RETURN TO MEMORIAL
         ========================= */
@@ -40,24 +33,27 @@
         #returnMemorial {
             display: none;
             text-align: center;
-            background-color: #f1eee7;
-            padding: 15px 20px;
+            background: #080808;
+            padding: 18px 20px;
+            border-bottom: 1px solid #d8bb80;
         }
-
 
         #returnMemorial a {
             display: inline-block;
-            padding: 11px 24px;
-            background-color: #b49a68;
-            color: white;
+            padding: 12px 28px;
+            background: #d8bb80;
+            color: #080808;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 3px;
             font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            transition: 0.3s;
         }
 
-
         #returnMemorial a:hover {
-            background-color: #947b4d;
+            background: #f0d9a2;
+            transform: translateY(-2px);
         }
 
 
@@ -66,25 +62,24 @@
         ========================= */
 
         nav {
-            background-color: #303a3a;
-            padding: 18px 7%;
+            background: #050505;
+            padding: 20px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid #d8bb80;
         }
 
-
         .logo {
-            color: white;
+            color: #d8bb80;
             font-size: 25px;
             text-decoration: none;
             font-weight: bold;
             letter-spacing: 1px;
         }
-
 
         nav ul {
             list-style: none;
@@ -92,16 +87,16 @@
             gap: 25px;
         }
 
-
         nav ul li a {
-            color: white;
+            color: #f4eee2;
             text-decoration: none;
-            font-size: 15px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: 0.3s;
         }
 
-
         nav ul li a:hover {
-            color: #c8ad78;
+            color: #d8bb80;
         }
 
 
@@ -110,7 +105,7 @@
         ========================= */
 
         .hero {
-            min-height: 85vh;
+            min-height: 88vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -119,57 +114,66 @@
 
             background:
                 linear-gradient(
-                    rgba(48,58,58,0.80),
-                    rgba(48,58,58,0.80)
+                    rgba(5,5,5,0.78),
+                    rgba(5,5,5,0.88)
                 ),
                 url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1800&q=80");
 
             background-size: cover;
             background-position: center;
+
             color: white;
         }
 
-
         .hero-content {
-            max-width: 850px;
+            max-width: 900px;
         }
 
+        .hero-small {
+            color: #d8bb80;
+            font-size: 15px;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+        }
 
         .hero h1 {
-            font-size: 65px;
+            font-size: 68px;
             font-weight: normal;
+            color: #f4eee2;
             margin-bottom: 15px;
         }
 
-
         .hero h2 {
-            font-size: 25px;
+            font-size: 27px;
             font-weight: normal;
+            color: #d8bb80;
             margin-bottom: 25px;
         }
 
-
         .hero p {
             font-size: 19px;
-            max-width: 700px;
+            max-width: 720px;
             margin: auto;
+            color: #eee;
         }
-
 
         .button {
             display: inline-block;
-            margin-top: 30px;
-            padding: 14px 30px;
-            background-color: #b49a68;
-            color: white;
+            margin-top: 32px;
+            padding: 14px 32px;
+            background: #d8bb80;
+            color: #080808;
             text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
+            border-radius: 3px;
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            transition: 0.3s;
         }
 
-
         .button:hover {
-            background-color: #947b4d;
+            background: #f0d9a2;
+            transform: translateY(-2px);
         }
 
 
@@ -178,30 +182,36 @@
         ========================= */
 
         section {
-            padding: 80px 20px;
+            padding: 85px 20px;
         }
-
 
         .container {
             max-width: 1100px;
             margin: auto;
         }
 
-
         .section-title {
             text-align: center;
-            color: #303a3a;
-            font-size: 38px;
+            color: #303030;
+            font-size: 40px;
             font-weight: normal;
             margin-bottom: 15px;
         }
 
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 70px;
+            height: 2px;
+            background: #d8bb80;
+            margin: 18px auto 0;
+        }
 
         .section-subtitle {
             text-align: center;
             max-width: 700px;
             margin: 0 auto 45px;
-            color: #666;
+            color: #777;
             font-size: 17px;
         }
 
@@ -211,9 +221,8 @@
         ========================= */
 
         .welcome {
-            background-color: white;
+            background: #f4eee2;
         }
-
 
         .welcome-content {
             max-width: 850px;
@@ -221,10 +230,9 @@
             text-align: center;
         }
 
-
         .welcome-content p {
             font-size: 18px;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
         }
 
 
@@ -233,27 +241,37 @@
         ========================= */
 
         .how-it-works {
-            background-color: #f1eee7;
+            background: #080808;
+            color: #f4eee2;
         }
 
+        .how-it-works .section-title {
+            color: #f4eee2;
+        }
+
+        .how-it-works .section-subtitle {
+            color: #cfcfcf;
+        }
 
         .steps {
             display: grid;
-            grid-template-columns:
-                repeat(4, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 25px;
         }
 
-
         .step {
-            background-color: white;
+            background: #111;
             padding: 35px 25px;
             text-align: center;
-            border-radius: 10px;
-            box-shadow:
-                0 4px 15px rgba(0,0,0,0.07);
+            border: 1px solid #292929;
+            border-radius: 5px;
+            transition: 0.3s;
         }
 
+        .step:hover {
+            border-color: #d8bb80;
+            transform: translateY(-4px);
+        }
 
         .step-number {
             width: 55px;
@@ -264,23 +282,21 @@
             align-items: center;
             justify-content: center;
 
-            background-color: #b49a68;
-            color: white;
-
+            background: #d8bb80;
+            color: #080808;
             border-radius: 50%;
 
             font-size: 22px;
+            font-weight: bold;
         }
 
-
         .step h3 {
-            color: #303a3a;
+            color: #d8bb80;
             margin-bottom: 12px;
         }
 
-
         .step p {
-            color: #666;
+            color: #ccc;
             font-size: 15px;
         }
 
@@ -290,37 +306,38 @@
         ========================= */
 
         .services {
-            background-color: white;
+            background: #f8f5ef;
         }
-
 
         .service-grid {
             display: grid;
-            grid-template-columns:
-                repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
 
-
         .service {
             padding: 35px 25px;
+            background: #fff;
             border: 1px solid #e1ddd4;
-            border-radius: 10px;
+            border-radius: 5px;
             text-align: center;
+            transition: 0.3s;
         }
 
+        .service:hover {
+            border-color: #d8bb80;
+            transform: translateY(-4px);
+        }
 
         .service-icon {
-            font-size: 42px;
+            font-size: 40px;
             margin-bottom: 15px;
         }
 
-
         .service h3 {
-            color: #303a3a;
+            color: #303030;
             margin-bottom: 12px;
         }
-
 
         .service p {
             color: #666;
@@ -332,16 +349,14 @@
         ========================= */
 
         .about {
-            background-color: #f1eee7;
+            background: #f4eee2;
         }
-
 
         .about-content {
             max-width: 850px;
             margin: auto;
             text-align: center;
         }
-
 
         .about-content p {
             font-size: 18px;
@@ -354,23 +369,25 @@
         ========================= */
 
         .privacy {
-            background-color: white;
+            background: #fff;
         }
-
 
         .privacy-box {
             max-width: 850px;
             margin: auto;
-            background-color: #f8f5ef;
-            padding: 35px;
-            border-left: 5px solid #b49a68;
-            border-radius: 5px;
+            background: #f8f5ef;
+            padding: 40px;
+            border-left: 4px solid #d8bb80;
+            border-radius: 3px;
         }
 
-
         .privacy-box h3 {
-            color: #303a3a;
+            color: #303030;
             margin-bottom: 12px;
+        }
+
+        .privacy-box p {
+            margin-bottom: 15px;
         }
 
 
@@ -379,33 +396,42 @@
         ========================= */
 
         .contact {
-            background-color: #303a3a;
+            background: #050505;
             color: white;
             text-align: center;
+            border-top: 1px solid #d8bb80;
         }
-
 
         .contact .section-title {
-            color: white;
+            color: #f4eee2;
         }
-
 
         .contact .section-subtitle {
-            color: #ddd;
+            color: #ccc;
         }
-
 
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 50px;
+            gap: 55px;
             flex-wrap: wrap;
-            margin-top: 30px;
+            margin-top: 35px;
         }
-
 
         .contact-item {
             font-size: 17px;
+            color: #ddd;
+        }
+
+        .contact-item a {
+            color: #d8bb80;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #f0d9a2;
+            text-decoration: underline;
         }
 
 
@@ -414,12 +440,16 @@
         ========================= */
 
         footer {
-            background-color: #222a2a;
-            color: #ccc;
+            background: #000;
+            color: #aaa;
             text-align: center;
             padding: 30px 20px;
+            border-top: 1px solid #222;
         }
 
+        footer strong {
+            color: #d8bb80;
+        }
 
         footer p {
             margin: 5px;
@@ -437,74 +467,99 @@
                 gap: 15px;
             }
 
-
             nav ul {
                 gap: 15px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
 
-
             .hero h1 {
-                font-size: 45px;
+                font-size: 48px;
             }
-
 
             .hero h2 {
-                font-size: 21px;
+                font-size: 22px;
             }
-
 
             .steps {
-                grid-template-columns:
-                    repeat(2, 1fr);
+                grid-template-columns: repeat(2, 1fr);
             }
-
 
             .service-grid {
-                grid-template-columns:
-                    repeat(2, 1fr);
+                grid-template-columns: repeat(2, 1fr);
             }
-
         }
 
 
         @media (max-width: 550px) {
 
-            .hero {
-                min-height: 75vh;
+            nav {
+                padding: 16px 15px;
             }
 
+            .logo {
+                font-size: 22px;
+            }
+
+            nav ul {
+                gap: 10px;
+            }
+
+            nav ul li a {
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: 78vh;
+                padding: 60px 18px;
+            }
+
+            .hero-small {
+                font-size: 12px;
+                letter-spacing: 3px;
+            }
 
             .hero h1 {
-                font-size: 37px;
+                font-size: 38px;
             }
 
+            .hero h2 {
+                font-size: 20px;
+            }
 
             .hero p {
                 font-size: 17px;
             }
 
-
             .steps {
                 grid-template-columns: 1fr;
             }
-
 
             .service-grid {
                 grid-template-columns: 1fr;
             }
 
-
             section {
                 padding: 60px 18px;
             }
 
-
             .section-title {
-                font-size: 31px;
+                font-size: 32px;
             }
 
+            .privacy-box {
+                padding: 25px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 22px;
+            }
+
+            #returnMemorial a {
+                width: 100%;
+                max-width: 330px;
+            }
         }
 
     </style>
@@ -516,7 +571,7 @@
 
 
 <!-- =========================
-     RETURN TO HARRISON'S MEMORIAL
+     RETURN TO HARRISON MEMORIAL
 ========================= -->
 
 <div id="returnMemorial"></div>
@@ -532,40 +587,35 @@
         Forever Remembered
     </a>
 
-
     <ul>
 
         <li>
             <a href="#home">
-                Home
+                HOME
             </a>
         </li>
-
 
         <li>
             <a href="#how-it-works">
-                How It Works
+                HOW IT WORKS
             </a>
         </li>
-
 
         <li>
             <a href="#services">
-                Services
+                SERVICES
             </a>
         </li>
-
 
         <li>
             <a href="#about">
-                About
+                ABOUT
             </a>
         </li>
 
-
         <li>
             <a href="#contact">
-                Contact
+                CONTACT
             </a>
         </li>
 
@@ -575,35 +625,36 @@
 
 
 <!-- =========================
-     HERO / HOME
+     HERO
 ========================= -->
 
 <header class="hero" id="home">
 
     <div class="hero-content">
 
+        <div class="hero-small">
+            HONORING LIVES • PRESERVING MEMORIES
+        </div>
+
         <h1>
             Forever Remembered
         </h1>
 
-
         <h2>
-            Honoring Lives. Preserving Memories.
+            A Place Where Memories Live On
         </h2>
-
 
         <p>
             Beautiful digital memorials created to
-            celebrate the lives, stories, and memories
-            of those we love.
+            celebrate the lives, stories, photographs,
+            and memories of those we love.
         </p>
-
 
         <a
             href="#how-it-works"
             class="button">
 
-            Discover How It Works
+            DISCOVER HOW IT WORKS
 
         </a>
 
@@ -626,11 +677,9 @@
                 A Place to Remember
             </h2>
 
-
             <p class="section-subtitle">
                 Every life has a story worth remembering.
             </p>
-
 
             <p>
                 Forever Remembered creates personal
@@ -638,7 +687,6 @@
                 a lasting place to honor and celebrate
                 the lives of their loved ones.
             </p>
-
 
             <p>
                 Each memorial can include photographs,
@@ -668,12 +716,10 @@
             How It Works
         </h2>
 
-
         <p class="section-subtitle">
             Creating a meaningful digital memorial
             is simple.
         </p>
-
 
         <div class="steps">
 
@@ -684,11 +730,9 @@
                     1
                 </div>
 
-
                 <h3>
                     Share Their Story
                 </h3>
-
 
                 <p>
                     Provide us with photographs,
@@ -706,11 +750,9 @@
                     2
                 </div>
 
-
                 <h3>
                     We Create the Memorial
                 </h3>
-
 
                 <p>
                     We create a beautiful personal
@@ -727,11 +769,9 @@
                     3
                 </div>
 
-
                 <h3>
                     Receive Your QR Code
                 </h3>
-
 
                 <p>
                     Each memorial receives its own
@@ -748,11 +788,9 @@
                     4
                 </div>
 
-
                 <h3>
                     Remember Anytime
                 </h3>
-
 
                 <p>
                     Family and friends can scan the
@@ -784,7 +822,6 @@
             Our Memorial Services
         </h2>
 
-
         <p class="section-subtitle">
             A personal space created to preserve
             memories for years to come.
@@ -800,11 +837,9 @@
                     🕊️
                 </div>
 
-
                 <h3>
                     Digital Memorial
                 </h3>
-
 
                 <p>
                     A dedicated online memorial
@@ -821,11 +856,9 @@
                     📷
                 </div>
 
-
                 <h3>
                     Photo Memories
                 </h3>
-
 
                 <p>
                     Preserve meaningful photographs
@@ -841,11 +874,9 @@
                     📱
                 </div>
 
-
                 <h3>
                     Memorial QR Code
                 </h3>
-
 
                 <p>
                     A unique QR code provides quick
@@ -861,11 +892,9 @@
                     ❤️
                 </div>
 
-
                 <h3>
                     Life Stories
                 </h3>
-
 
                 <p>
                     Share their story, achievements,
@@ -882,11 +911,9 @@
                     🌹
                 </div>
 
-
                 <h3>
                     Tributes
                 </h3>
-
 
                 <p>
                     Give family and friends a place
@@ -903,11 +930,9 @@
                     🕯️
                 </div>
 
-
                 <h3>
                     Lasting Memories
                 </h3>
-
 
                 <p>
                     Create a digital place where
@@ -941,7 +966,6 @@
                 Our Purpose
             </h2>
 
-
             <p>
                 Losing someone we love can leave
                 behind countless memories, stories,
@@ -949,14 +973,12 @@
                 to be preserved.
             </p>
 
-
             <p>
                 Our goal is to provide families with
                 a beautiful digital space where those
                 memories can be kept together and
                 shared with the people who matter most.
             </p>
-
 
             <p>
                 Because while a person may no longer
@@ -983,7 +1005,6 @@
             Your Memorial. Your Choice.
         </h2>
 
-
         <p class="section-subtitle">
             Families should have control over how
             their loved one's memorial is shared.
@@ -996,14 +1017,12 @@
                 Private Memorials
             </h3>
 
-
             <p>
                 Memorials can be created with privacy
                 options so families can decide who
                 should have access to their loved
                 one's story and memories.
             </p>
-
 
             <p>
                 The QR code can provide a direct way
@@ -1032,7 +1051,6 @@
             Contact Us
         </h2>
 
-
         <p class="section-subtitle">
             Interested in creating a digital memorial?
             Get in touch with us.
@@ -1042,21 +1060,33 @@
         <div class="contact-info">
 
 
+            <!-- EMAIL -->
+
             <div class="contact-item">
 
                 📧 Email:
-                your@email.com
+
+                <a href="mailto:Gferguson440@gmail.com">
+                    Gferguson440@gmail.com
+                </a>
 
             </div>
 
+
+            <!-- PHONE -->
 
             <div class="contact-item">
 
                 📞 Phone:
-                (501) 000-0000
+
+                <a href="tel:6745200">
+                    674-5200
+                </a>
 
             </div>
 
+
+            <!-- LOCATION -->
 
             <div class="contact-item">
 
@@ -1087,11 +1117,9 @@
 
     </p>
 
-
     <p>
         Honoring lives. Preserving memories.
     </p>
-
 
     <p>
         © 2026 Forever Remembered.
@@ -1102,56 +1130,54 @@
 
 
 <!-- =========================
-     HARRISON RETURN SYSTEM
+     RETURN TO MEMORIAL SCRIPT
 ========================= -->
 
 <script>
 
     /*
-        Check whether the visitor came
-        from Mr. Harrison Wright's memorial.
+        The Harrison memorial page should
+        send visitors here using:
+
+        index.html?memorial=harrison
     */
 
-    const params =
-        new URLSearchParams(
-            window.location.search
-        );
+    const params = new URLSearchParams(
+        window.location.search
+    );
 
-
-    const memorial =
-        params.get("from");
+    const memorial = params.get("memorial");
 
 
     /*
-        Mr. Harrison Wright's memorial page.
+        Memorial pages are kept hidden
+        from the normal home page.
+
+        They only appear as a return button
+        when someone arrives through that
+        memorial's special link.
     */
 
     const memorials = {
 
         harrison: {
-
-            name: "Mr. Harrison's Memorial",
-
+            name: "Harrison Wright's Memorial",
             link: "Harrison-Wright.html"
-
         }
 
     };
 
 
-    /*
-        Find the return button area.
-    */
-
     const returnMemorial =
-        document.getElementById(
-            "returnMemorial"
-        );
+        document.getElementById("returnMemorial");
 
 
     /*
-        Show the button only when
-        ?from=harrison is in the URL.
+        If the URL contains:
+
+        ?memorial=harrison
+
+        show the Harrison return button.
     */
 
     if (
@@ -1163,16 +1189,14 @@
 
             <a href="${memorials[memorial].link}">
 
-                ← Return to
+                ← RETURN TO
                 ${memorials[memorial].name}
 
             </a>
 
         `;
 
-
-        returnMemorial.style.display =
-            "block";
+        returnMemorial.style.display = "block";
 
     }
 
