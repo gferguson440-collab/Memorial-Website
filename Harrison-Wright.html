@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Forever Remembered | Digital Memorials</title>
+    <title>Mr. Harrison Wright | Forever Remembered</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -22,10 +23,11 @@
             font-family: Georgia, "Times New Roman", serif;
             color: #333;
             background: #f8f6f1;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         /* NAVIGATION */
+
         nav {
             background: #2f3b46;
             color: white;
@@ -59,41 +61,43 @@
             color: #d5c39b;
         }
 
-        /* RETURN TO MEMORIAL */
-        #returnMemorial {
-            display: none;
+        /* BACK TO HOME */
+
+        .back-area {
             text-align: center;
-            background: #f1eee7;
-            padding: 18px 20px;
+            background: #eeeae2;
+            padding: 18px;
         }
 
-        #returnMemorial a {
+        .back-button {
             display: inline-block;
-            padding: 12px 26px;
             background: #b49a68;
             color: white;
             text-decoration: none;
+            padding: 12px 25px;
             border-radius: 6px;
             font-size: 16px;
         }
 
-        #returnMemorial a:hover {
+        .back-button:hover {
             background: #947b4d;
         }
 
-        /* HERO */
-        .hero {
-            height: 80vh;
+        /* MEMORIAL HERO */
+
+        .memorial-hero {
             background:
                 linear-gradient(
-                    rgba(0,0,0,0.45),
-                    rgba(0,0,0,0.45)
+                    rgba(0,0,0,0.5),
+                    rgba(0,0,0,0.5)
                 ),
                 url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1600&q=80");
 
             background-size: cover;
             background-position: center;
 
+            min-height: 70vh;
+
             display: flex;
             justify-content: center;
             align-items: center;
@@ -101,111 +105,77 @@
             text-align: center;
             color: white;
 
-            padding: 20px;
+            padding: 40px 20px;
         }
 
-        .hero-content {
-            max-width: 800px;
+        .memorial-content {
+            max-width: 900px;
         }
 
-        .hero h1 {
-            font-size: 55px;
-            margin-bottom: 20px;
+        .memorial-content img {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid white;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
         }
 
-        .hero p {
-            font-size: 21px;
-            margin-bottom: 30px;
+        .memorial-content h1 {
+            font-size: 52px;
+            margin-bottom: 12px;
         }
 
-        .hero-button {
-            display: inline-block;
-            background: #b49a68;
-            color: white;
-            padding: 14px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 17px;
-        }
-
-        .hero-button:hover {
-            background: #947b4d;
+        .dates {
+            font-size: 23px;
+            font-style: italic;
         }
 
         /* SECTIONS */
+
         section {
             padding: 70px 7%;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 45px;
+            margin-bottom: 40px;
         }
 
         .section-title h2 {
             color: #2f3b46;
             font-size: 35px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .section-title p {
             color: #666;
-            max-width: 700px;
-            margin: auto;
         }
 
-        /* WELCOME */
-        .welcome {
+        /* LIFE STORY */
+
+        .story {
             max-width: 900px;
             margin: auto;
-            text-align: center;
-        }
-
-        .welcome p {
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-
-        /* HOW IT WORKS */
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .step {
             background: white;
-            padding: 30px 20px;
-            text-align: center;
+            padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
         }
 
-        .step-number {
-            width: 50px;
-            height: 50px;
-            margin: 0 auto 15px;
-            background: #2f3b46;
-            color: white;
-            border-radius: 50%;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            font-size: 20px;
-            font-weight: bold;
+        .story p {
+            font-size: 18px;
+            margin-bottom: 18px;
         }
 
-        .step h3 {
-            color: #2f3b46;
-            margin-bottom: 10px;
+        /* MEMORIES */
+
+        .memories {
+            background: #eeeae2;
         }
 
-        /* SERVICES */
-        .services {
+        .memory-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 25px;
@@ -213,56 +183,55 @@
             margin: auto;
         }
 
-        .service {
+        .memory {
             background: white;
             padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .memory h3 {
+            color: #2f3b46;
+            margin-bottom: 12px;
+        }
+
+        /* PHOTO GALLERY */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* TRIBUTE */
+
+        .tribute {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            background: white;
+            padding: 45px;
             border-radius: 10px;
             box-shadow: 0 3px 12px rgba(0,0,0,0.08);
         }
 
-        .service h3 {
-            color: #2f3b46;
-            margin-bottom: 10px;
-        }
-
-        /* ABOUT */
-        .about {
-            max-width: 900px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .about p {
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-
-        /* PRIVACY */
-        .privacy {
-            background: #eeeae2;
-        }
-
-        .privacy-content {
-            max-width: 900px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .privacy-content h2 {
-            color: #2f3b46;
-            margin-bottom: 15px;
-        }
-
-        /* CONTACT */
-        .contact {
-            text-align: center;
-        }
-
-        .contact p {
-            margin-bottom: 10px;
+        .tribute p {
+            font-size: 20px;
+            font-style: italic;
         }
 
         /* FOOTER */
+
         footer {
             background: #2f3b46;
             color: white;
@@ -275,6 +244,7 @@
         }
 
         /* MOBILE */
+
         @media (max-width: 800px) {
 
             nav {
@@ -288,52 +258,51 @@
                 justify-content: center;
             }
 
-            .hero h1 {
+            .memorial-content h1 {
                 font-size: 40px;
             }
 
-            .hero p {
-                font-size: 18px;
-            }
-
-            .steps {
+            .memory-grid {
                 grid-template-columns: 1fr 1fr;
             }
 
-            .services {
+            .gallery {
                 grid-template-columns: 1fr 1fr;
             }
         }
 
         @media (max-width: 550px) {
 
-            .steps {
-                grid-template-columns: 1fr;
-            }
-
-            .services {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                height: 70vh;
-            }
-
-            .hero h1 {
+            .memorial-content h1 {
                 font-size: 32px;
             }
-        }
-    </style>
-</head>
 
+            .dates {
+                font-size: 19px;
+            }
+
+            .memory-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .story,
+            .tribute {
+                padding: 25px;
+            }
+        }
+
+    </style>
+
+</head>
 
 <body>
 
-    <!-- RETURN TO HARRISON'S MEMORIAL -->
-    <div id="returnMemorial"></div>
-
-
     <!-- NAVIGATION -->
+
     <nav>
 
         <div class="logo">
@@ -341,73 +310,99 @@
         </div>
 
         <ul>
+
             <li>
-                <a href="#home">Home</a>
+                <a href="#memorial">Memorial</a>
             </li>
 
             <li>
-                <a href="#how-it-works">How It Works</a>
+                <a href="#story">Life Story</a>
             </li>
 
             <li>
-                <a href="#services">Services</a>
+                <a href="#memories">Memories</a>
             </li>
 
             <li>
-                <a href="#about">About</a>
+                <a href="#gallery">Gallery</a>
             </li>
 
             <li>
-                <a href="#contact">Contact</a>
+                <a href="#tribute">Tribute</a>
             </li>
+
         </ul>
 
     </nav>
 
 
-    <!-- HERO -->
-    <section class="hero" id="home">
+    <!-- BACK TO HOME -->
 
-        <div class="hero-content">
+    <div class="back-area">
 
-            <h1>Forever Remembered</h1>
+        <a href="index.html?from=harrison" class="back-button">
+            ← Back to Home
+        </a>
 
-            <p>
-                Creating beautiful digital memorials
-                that keep cherished memories alive.
+    </div>
+
+
+    <!-- MEMORIAL HERO -->
+
+    <section class="memorial-hero" id="memorial">
+
+        <div class="memorial-content">
+
+            <!-- Change harrison.jpg to the exact name of Harrison's photo -->
+
+            <img
+                src="harrison.jpg"
+                alt="Photo of Mr. Harrison Wright"
+            >
+
+            <h1>Mr. Harrison Wright</h1>
+
+            <p class="dates">
+                Forever Remembered
             </p>
-
-            <a href="#how-it-works" class="hero-button">
-                Learn More
-            </a>
 
         </div>
 
     </section>
 
 
-    <!-- WELCOME -->
-    <section>
+    <!-- LIFE STORY -->
+
+    <section id="story">
 
         <div class="section-title">
 
-            <h2>Welcome</h2>
+            <h2>Life Story</h2>
+
+            <p>
+                Remembering the life and legacy of Mr. Harrison Wright.
+            </p>
 
         </div>
 
-        <div class="welcome">
+        <div class="story">
 
             <p>
-                Forever Remembered provides a meaningful way
-                to honor and remember the people who have
-                touched our lives.
+                Mr. Harrison Wright was a valued and cherished
+                member of his family and community.
             </p>
 
             <p>
-                Each memorial can preserve photographs,
-                stories, memories, and special moments so
-                that loved ones can continue to remember
-                them for generations.
+                His life touched the people around him in many
+                meaningful ways. The memories he created and
+                the lessons he shared will continue to be remembered
+                by those who knew and loved him.
+            </p>
+
+            <p>
+                This memorial is a place to honor his life,
+                remember his story, and celebrate the impact
+                he had on others.
             </p>
 
         </div>
@@ -415,73 +410,53 @@
     </section>
 
 
-    <!-- HOW IT WORKS -->
-    <section id="how-it-works">
+    <!-- MEMORIES -->
+
+    <section class="memories" id="memories">
 
         <div class="section-title">
 
-            <h2>How It Works</h2>
+            <h2>Memories</h2>
 
             <p>
-                Creating a memorial is simple and meaningful.
+                A collection of memories that will always be cherished.
             </p>
 
         </div>
 
+        <div class="memory-grid">
 
-        <div class="steps">
+            <div class="memory">
 
-            <div class="step">
-
-                <div class="step-number">1</div>
-
-                <h3>Create</h3>
+                <h3>Family</h3>
 
                 <p>
-                    Create a personalized memorial page
-                    for your loved one.
+                    The memories shared with family will
+                    always hold a special place in our hearts.
                 </p>
 
             </div>
 
 
-            <div class="step">
+            <div class="memory">
 
-                <div class="step-number">2</div>
-
-                <h3>Personalize</h3>
+                <h3>Friendship</h3>
 
                 <p>
-                    Add photographs, memories, stories,
-                    and meaningful messages.
+                    The friendships and relationships he built
+                    will continue to be remembered.
                 </p>
 
             </div>
 
 
-            <div class="step">
+            <div class="memory">
 
-                <div class="step-number">3</div>
-
-                <h3>Share</h3>
+                <h3>Legacy</h3>
 
                 <p>
-                    Share the memorial with family and
-                    friends through a private link or QR code.
-                </p>
-
-            </div>
-
-
-            <div class="step">
-
-                <div class="step-number">4</div>
-
-                <h3>Remember</h3>
-
-                <p>
-                    Keep their memories alive for years
-                    to come.
+                    His life and the memories he left behind
+                    will continue to live on.
                 </p>
 
             </div>
@@ -491,167 +466,58 @@
     </section>
 
 
-    <!-- SERVICES -->
-    <section id="services">
+    <!-- PHOTO GALLERY -->
+
+    <section id="gallery">
 
         <div class="section-title">
 
-            <h2>Our Services</h2>
+            <h2>Photo Gallery</h2>
 
             <p>
-                Thoughtful digital memorial services
-                designed to preserve memories.
+                Special moments and memories.
             </p>
 
         </div>
 
+        <div class="gallery">
 
-        <div class="services">
+            <img
+                src="harrison.jpg"
+                alt="Mr. Harrison Wright"
+            >
 
-            <div class="service">
-
-                <h3>Digital Memorial Pages</h3>
-
-                <p>
-                    Beautiful personalized pages dedicated
-                    to your loved one.
-                </p>
-
-            </div>
-
-
-            <div class="service">
-
-                <h3>Photo Memories</h3>
-
-                <p>
-                    Preserve special photographs and
-                    meaningful moments.
-                </p>
-
-            </div>
-
-
-            <div class="service">
-
-                <h3>Life Stories</h3>
-
-                <p>
-                    Share important stories and memories
-                    about their life.
-                </p>
-
-            </div>
-
-
-            <div class="service">
-
-                <h3>QR Codes</h3>
-
-                <p>
-                    Connect visitors directly to a memorial
-                    using a personalized QR code.
-                </p>
-
-            </div>
-
-
-            <div class="service">
-
-                <h3>Private Memorials</h3>
-
-                <p>
-                    Memorial pages can be shared privately
-                    with family and friends.
-                </p>
-
-            </div>
-
-
-            <div class="service">
-
-                <h3>Long-Term Memories</h3>
-
-                <p>
-                    Create a lasting place where memories
-                    can continue to be cherished.
-                </p>
-
-            </div>
+            <!-- Add more photos here when you have them -->
 
         </div>
 
     </section>
 
 
-    <!-- ABOUT -->
-    <section id="about">
+    <!-- TRIBUTE -->
+
+    <section id="tribute">
 
         <div class="section-title">
 
-            <h2>About Us</h2>
+            <h2>In Loving Memory</h2>
 
         </div>
 
-        <div class="about">
+        <div class="tribute">
 
             <p>
-                Forever Remembered was created to provide
-                families with a special digital space to
-                honor the people they love.
-            </p>
-
-            <p>
-                We believe that although someone may no
-                longer be with us, their memories, stories,
-                and impact can continue to live on.
+                "Those we love may leave our sight,
+                but they never leave our hearts."
             </p>
 
         </div>
-
-    </section>
-
-
-    <!-- PRIVACY -->
-    <section class="privacy">
-
-        <div class="privacy-content">
-
-            <h2>Privacy & Memories</h2>
-
-            <p>
-                Every memorial is created with respect and care.
-                Families can choose how they want to share their
-                loved one's memorial with others.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-    <section id="contact" class="contact">
-
-        <div class="section-title">
-
-            <h2>Contact Us</h2>
-
-            <p>
-                Have questions about creating a memorial?
-            </p>
-
-        </div>
-
-        <p>
-            We are here to help you preserve
-            your loved one's memories.
-        </p>
 
     </section>
 
 
     <!-- FOOTER -->
+
     <footer>
 
         <p>
@@ -659,53 +525,10 @@
         </p>
 
         <p>
-            Keeping memories alive forever.
+            Honoring the life and memory of Mr. Harrison Wright.
         </p>
 
     </footer>
-
-
-    <!-- RETURN BUTTON SCRIPT -->
-    <script>
-
-        const params = new URLSearchParams(
-            window.location.search
-        );
-
-        const memorial = params.get("from");
-
-        const memorials = {
-
-            harrison: {
-                name: "Mr. Harrison's Memorial",
-                link: "Harrison-Wright.html"
-            }
-
-        };
-
-
-        const returnMemorial =
-            document.getElementById("returnMemorial");
-
-
-        if (
-            memorial &&
-            memorials[memorial]
-        ) {
-
-            returnMemorial.innerHTML = `
-
-                <a href="${memorials[memorial].link}">
-                    ← Return to ${memorials[memorial].name}
-                </a>
-
-            `;
-
-            returnMemorial.style.display = "block";
-
-        }
-
-    </script>
 
 </body>
 
