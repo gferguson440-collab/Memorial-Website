@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,22 +14,28 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Georgia, "Times New Roman", serif;
             background: #f5f1e8;
             color: #333;
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
+        /* HEADER */
         header {
-            background: #3d3d3d;
+            background: linear-gradient(rgba(45,45,45,0.95), rgba(65,65,65,0.95));
             color: white;
             text-align: center;
-            padding: 35px 20px;
+            padding: 45px 20px 35px;
         }
 
         header h1 {
-            font-size: 42px;
+            font-size: 44px;
+            letter-spacing: 1px;
             margin-bottom: 8px;
         }
 
@@ -39,120 +46,177 @@
 
         .back-button {
             display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: #ffffff;
+            margin-top: 22px;
+            padding: 11px 23px;
+            background: white;
             color: #333;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 30px;
             font-family: Arial, sans-serif;
             font-size: 15px;
+            transition: 0.3s;
         }
 
         .back-button:hover {
-            background: #ddd;
+            background: #e5e5e5;
+            transform: translateY(-2px);
         }
 
+        /* HERO */
         .hero {
             text-align: center;
-            padding: 45px 20px;
+            padding: 55px 20px 45px;
         }
 
         .main-photo {
-            width: 260px;
-            height: 260px;
+            width: 280px;
+            height: 280px;
             object-fit: cover;
             border-radius: 50%;
-            border: 7px solid white;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            border: 8px solid white;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
         }
 
         .hero h2 {
             margin-top: 25px;
-            font-size: 32px;
+            font-size: 35px;
             color: #3d3d3d;
         }
 
         .dates {
-            font-size: 18px;
+            font-size: 19px;
             color: #777;
-            margin-top: 5px;
+            margin-top: 6px;
+            font-style: italic;
         }
 
+        /* SECTIONS */
         section {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
-            padding: 45px 20px;
+            padding: 55px 20px;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 32px;
         }
 
         .section-title h2 {
-            font-size: 30px;
+            font-size: 31px;
             color: #3d3d3d;
             margin-bottom: 8px;
         }
 
         .section-title p {
             color: #777;
+            font-size: 16px;
         }
 
+        /* ABOUT */
         .about {
             background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            border-radius: 14px;
+            padding: 35px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.08);
         }
 
         .about p {
-            margin-bottom: 15px;
+            margin-bottom: 18px;
         }
 
         .about p:last-child {
             margin-bottom: 0;
         }
 
+        /* MEMORY CARDS */
+        .memory-card {
+            background: white;
+            border-radius: 14px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+            border-left: 5px solid #777;
+        }
+
+        .memory-card h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: #3d3d3d;
+        }
+
+        .memory-card p {
+            margin-bottom: 12px;
+        }
+
+        .memory-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* PHOTO GALLERY */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            gap: 22px;
         }
 
         .gallery img {
             width: 100%;
-            height: 250px;
+            height: 270px;
             object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease;
+            border-radius: 12px;
+            box-shadow: 0 5px 16px rgba(0,0,0,0.16);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .gallery img:hover {
             transform: scale(1.03);
+            box-shadow: 0 8px 22px rgba(0,0,0,0.22);
         }
 
+        /* QUOTE */
         .quote {
             background: #e8e0d1;
             text-align: center;
-            padding: 45px 25px;
-            margin-top: 20px;
-            border-radius: 10px;
+            padding: 55px 30px;
+            margin-top: 10px;
+            border-radius: 14px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
         }
 
         .quote p {
-            font-size: 23px;
+            font-size: 25px;
             font-style: italic;
             color: #4a4a4a;
         }
 
+        /* FINAL MESSAGE */
+        .final-message {
+            text-align: center;
+            background: white;
+            border-radius: 14px;
+            padding: 40px 30px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+        }
+
+        .final-message h2 {
+            font-size: 30px;
+            margin-bottom: 18px;
+            color: #3d3d3d;
+        }
+
+        .amen {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 25px;
+        }
+
+        /* FOOTER */
         footer {
             background: #3d3d3d;
             color: white;
             text-align: center;
-            padding: 25px 20px;
+            padding: 30px 20px;
             margin-top: 30px;
         }
 
@@ -161,22 +225,54 @@
             opacity: 0.9;
         }
 
+        /* MOBILE */
         @media (max-width: 600px) {
+
             header h1 {
-                font-size: 30px;
+                font-size: 31px;
             }
 
-            .hero h2 {
-                font-size: 25px;
+            header p {
+                font-size: 16px;
+            }
+
+            .hero {
+                padding-top: 40px;
             }
 
             .main-photo {
-                width: 210px;
-                height: 210px;
+                width: 220px;
+                height: 220px;
+            }
+
+            .hero h2 {
+                font-size: 27px;
+            }
+
+            section {
+                padding: 40px 15px;
+            }
+
+            .section-title h2 {
+                font-size: 27px;
+            }
+
+            .about,
+            .memory-card,
+            .final-message {
+                padding: 25px;
             }
 
             .gallery {
                 grid-template-columns: 1fr;
+            }
+
+            .gallery img {
+                height: 300px;
+            }
+
+            .quote p {
+                font-size: 21px;
             }
         }
     </style>
@@ -186,12 +282,15 @@
 
     <!-- HEADER -->
     <header>
+
         <h1>Forever Remembered</h1>
-        <p>A Memorial in Loving Memory</p>
+
+        <p>A Memorial in Loving Memory of Mr. Harrison Wright</p>
 
         <a href="index.html?from=harrison" class="back-button">
             ← Back to Home
         </a>
+
     </header>
 
 
@@ -207,38 +306,306 @@
         <h2>Mr. Harrison Wright</h2>
 
         <div class="dates">
-            Forever in our hearts
+            Lovingly remembered as “Dirty Harry”
         </div>
 
     </div>
 
 
-    <!-- ABOUT -->
+    <!-- IN LOVING MEMORY -->
     <section>
 
         <div class="section-title">
+
             <h2>In Loving Memory</h2>
-            <p>Remembering a life that will never be forgotten.</p>
+
+            <p>
+                Remembering a life that touched the hearts of many.
+            </p>
+
         </div>
 
         <div class="about">
 
             <p>
-                Mr. Harrison Wright was a beloved person whose life
-                touched the hearts of family, friends, and everyone
-                who had the privilege of knowing him.
+                Today, we gather to remember and honor Mr. Harrison Wright,
+                better known to many of us as “Dirty Harry.” It is difficult
+                to find the words to capture a life as fully and as generously
+                as he lived.
             </p>
 
             <p>
-                His memories, kindness, and the moments shared with
-                him will continue to live on in the hearts of those
-                who loved him.
+                He touched so many of us in ways we probably never fully
+                realize. But his legacy is clear: through his kindness,
+                his wisdom, and the love he gave so freely, it will live on
+                in every single one of us.
             </p>
 
             <p>
-                This memorial page was created to honor his life,
-                remember the special moments, and keep his memory
-                alive for generations to come.
+                Mr. Harrison was born to Louanna Gillett on September 8, 1968.
+                He attended Grace Primary School and later went on to Sec Two.
+                In his early years, he worked as a bartender at Caye Chapel.
+                That was only the beginning of a life shaped by hard work,
+                steady character, and devotion to the people around him.
+            </p>
+
+            <p>
+                He then met the love of his life, Abby Williams, and they were
+                married on November 6, 1996. Together, they built a life grounded
+                in dedication and, most of all, family.
+            </p>
+
+            <p>
+                Later, after leaving Caye Chapel, they went on to live in
+                San Pedro, where he and Abby began their family.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- HIS FAMILY -->
+    <section>
+
+        <div class="section-title">
+
+            <h2>His Greatest Blessing: His Family</h2>
+
+            <p>
+                A father, grandfather, husband, brother, and friend.
+            </p>
+
+        </div>
+
+        <div class="memory-card">
+
+            <p>
+                Carshena was the first child, and from there, his home filled
+                with love and joy. Mr. Harrison found great joy in his seven
+                children, and he was blessed with ten grandchildren, whom he
+                cherished deeply.
+            </p>
+
+            <p>
+                Above all the things Harrison worked on and accomplished,
+                his family remained one of the most important parts of his life.
+                Being a father to seven children gave him seven different
+                relationships, seven different personalities to understand,
+                and countless memories that will remain with his family forever.
+            </p>
+
+            <p>
+                Harrison took great joy in being a grandfather. His ten
+                grandchildren gave him another generation to love, guide,
+                and create memories with. The stories they carry about their
+                grandfather will help keep his memory alive as they grow older.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- THE MAN WHO COULD FIX ALMOST ANYTHING -->
+    <section>
+
+        <div class="section-title">
+
+            <h2>The Man Who Could Fix Almost Anything</h2>
+
+            <p>
+                A mechanic with a gift for solving problems.
+            </p>
+
+        </div>
+
+        <div class="memory-card">
+
+            <p>
+                Mr. Harrison spent much of his life as a mechanic, a man who
+                took pride in fixing things and making them work again.
+                He worked on golf carts, boats, motorcycles, and anything
+                he could repair.
+            </p>
+
+            <p>
+                Whether it was engines, problems, or someone in need,
+                Mr. Harrison had a way of turning struggle into progress.
+                He didn't just fix machines — he fixed situations and
+                he helped people.
+            </p>
+
+            <p>
+                Harrison had a natural ability to work with his hands and
+                figure things out. When something stopped working, he was
+                often the person people turned to. He had a way of looking
+                at a problem, figuring it out, and finding a way forward.
+            </p>
+
+            <p>
+                But what made him special was that he didn't only fix
+                machines. He helped people. If someone was having a problem
+                and needed a hand, he was willing to help in whatever way
+                he could.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- THE PEOPLE HE LOVED -->
+    <section>
+
+        <div class="section-title">
+
+            <h2>The People He Loved</h2>
+
+            <p>
+                Family and friendships that meant so much to him.
+            </p>
+
+        </div>
+
+        <div class="memory-card">
+
+            <p>
+                Mr. Harrison always spoke highly about his brother,
+                Allison McField, whom he loved dearly. Even though they
+                didn't see each other often, whenever they did, they made
+                much of each other. Their bond remained an important part
+                of Harrison's life.
+            </p>
+
+            <p>
+                He also valued his friends Mr. Lucio, whom he referred to
+                as his dad, and Russan. These relationships were part of
+                the life Harrison built and the people who helped make
+                his journey meaningful.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- THE LITTLE THINGS -->
+    <section>
+
+        <div class="section-title">
+
+            <h2>The Little Things</h2>
+
+            <p>
+                The memories that make a person unforgettable.
+            </p>
+
+        </div>
+
+        <div class="memory-card">
+
+            <p>
+                Sometimes, it is not the big moments that we remember most.
+                It is the little things that become the memories we hold onto.
+            </p>
+
+            <p>
+                We will remember Harrison's love for his family, his ten
+                grandchildren, his dog Oreo, his tablet, and the everyday
+                moments that made him who he was.
+            </p>
+
+            <p>
+                These simple things may seem small, but they are the things
+                that make a person unforgettable. They are the memories that
+                family and friends will carry with them long after today.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- THE STORY OF DIRTY HARRY -->
+    <section>
+
+        <div class="section-title">
+
+            <h2>The Story of “Dirty Harry”</h2>
+
+            <p>
+                A name that became part of his story.
+            </p>
+
+        </div>
+
+        <div class="memory-card">
+
+            <p>
+                To many people, he was Harrison Wright. But to many others,
+                he was simply “Dirty Harry.” That name became part of the
+                person people knew and remembered.
+            </p>
+
+            <p>
+                When we hear the name “Dirty Harry,” we will remember the
+                man behind it — the father, grandfather, brother, friend,
+                husband, and mechanic who left his own mark on the people
+                around him.
+            </p>
+
+            <p>
+                His name will always be connected to the memories shared
+                with him and the people whose lives he touched.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- NAMES AND IDENTITY -->
+    <section>
+
+        <div class="section-title">
+
+            <h2>A Story of Names and Identity</h2>
+
+            <p>
+                Another part of Harrison's unique family story.
+            </p>
+
+        </div>
+
+        <div class="memory-card">
+
+            <p>
+                Mr. Harrison was also known for a complicated story of names
+                and identity, something many of us didn't fully understand
+                at first.
+            </p>
+
+            <p>
+                Some of you may remember how his last name situation was
+                spoken about over the years. Until September 2, my sister
+                Cashema and I realized that only my younger brother and I
+                were registered with his last name, which was Wright.
+            </p>
+
+            <p>
+                In 2011, he did a deed poll and changed his last name from
+                Gillett to Wright. Yet, my other siblings still remain as
+                McField, a name that came from a man my grandmother married,
+                but later divorced.
+            </p>
+
+            <p>
+                So we are still trying to figure out why we were given
+                McField if he was never registered as McField. Cashema and
+                I laughed about them not being his children. Even so,
+                Mr. Harrison remained the same man to all of us —
+                steady, loving, and present.
             </p>
 
         </div>
@@ -250,13 +617,14 @@
     <section id="gallery">
 
         <div class="section-title">
+
             <h2>Photo Gallery</h2>
 
             <p>
-                Special moments and memories.
+                Special moments and memories of Mr. Harrison Wright.
             </p>
-        </div>
 
+        </div>
 
         <div class="gallery">
 
@@ -290,15 +658,88 @@
     </section>
 
 
-    <!-- MEMORIAL QUOTE -->
+    <!-- HIS LEGACY -->
+    <section>
+
+        <div class="section-title">
+
+            <h2>His Legacy</h2>
+
+            <p>
+                The things he leaves behind in all of us.
+            </p>
+
+        </div>
+
+        <div class="about">
+
+            <p>
+                Today, we honor Mr. Harrison not only for what he did,
+                but for how he did it — with patience, perseverance,
+                and love.
+            </p>
+
+            <p>
+                His kindness and wisdom weren't limited to special
+                occasions. They were lived out in everyday moments:
+                in the way he worked, the way he cared, and the way
+                he kept showing up for the people he loved.
+            </p>
+
+            <p>
+                So even though we are saying goodbye, we are not truly
+                losing him. Because the truth is: his life has left a mark.
+                It lives in our stories. It lives in how we think about
+                family. And it lives in the values he showed us —
+                hard work, loyalty, and generosity of spirit.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUOTE -->
     <section>
 
         <div class="quote">
 
             <p>
-                "Those we love never truly leave us.
-                Their memories remain forever in our hearts."
+                “Those we love never truly leave us.
+                Their memories remain forever in our hearts.”
             </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL MESSAGE -->
+    <section>
+
+        <div class="final-message">
+
+            <h2>Thank You, Mr. Harrison</h2>
+
+            <p>
+                Mr. Harrison (Dirty Harry), thank you for the love you gave.
+                Thank you for the lessons you lived. And thank you for being
+                a man whose legacy will continue in every conversation,
+                every memory, and every act of kindness that follows
+                in your honor.
+            </p>
+
+            <p style="margin-top: 18px;">
+                May his soul rest in peace.
+            </p>
+
+            <p style="margin-top: 8px;">
+                And may we carry his light forward always.
+            </p>
+
+            <div class="amen">
+                Amen.
+            </div>
 
         </div>
 
@@ -312,8 +753,13 @@
             Forever Remembered — In Loving Memory of Mr. Harrison Wright
         </p>
 
+        <p style="margin-top: 8px;">
+            Loved • Remembered • Never Forgotten
+        </p>
+
     </footer>
 
 
 </body>
 </html>
+```
