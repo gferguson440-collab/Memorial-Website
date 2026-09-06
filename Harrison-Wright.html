@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,10 +13,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
-/* =========================
-   GENERAL
-========================= */
 
 * {
     margin: 0;
@@ -464,6 +461,92 @@ section {
 }
 
 /* =========================
+   ORDER OF SERVICE
+========================= */
+
+.order-service {
+    max-width: 900px;
+
+    margin: 55px auto 0;
+
+    padding: 45px 35px;
+
+    background: #0d0d0d;
+
+    border: 1px solid rgba(216,187,128,0.35);
+
+    box-shadow: 0 15px 45px rgba(0,0,0,0.35);
+}
+
+.order-service-title {
+    text-align: center;
+
+    color: var(--gold);
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 38px;
+
+    margin-bottom: 35px;
+}
+
+.order-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    padding: 17px 10px;
+
+    border-bottom: 1px solid rgba(216,187,128,0.14);
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.order-number {
+    min-width: 35px;
+
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid var(--gold);
+
+    border-radius: 50%;
+
+    color: var(--gold);
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 18px;
+}
+
+.order-text {
+    color: #ddd5c8;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 20px;
+
+    line-height: 1.5;
+
+    text-align: left;
+}
+
+.order-text strong {
+    color: var(--gold);
+
+    font-weight: 500;
+}
+
+/* =========================
    OREO
 ========================= */
 
@@ -623,6 +706,7 @@ footer p {
 ========================= */
 
 @keyframes fadeUp {
+
     from {
         opacity: 0;
         transform: translateY(25px);
@@ -632,6 +716,7 @@ footer p {
         opacity: 1;
         transform: translateY(0);
     }
+
 }
 
 .hero-content > * {
@@ -787,6 +872,30 @@ footer p {
     .final-quote {
         font-size: 24px;
     }
+
+    .order-service {
+        padding: 30px 18px;
+    }
+
+    .order-service-title {
+        font-size: 32px;
+    }
+
+    .order-item {
+        gap: 12px;
+        padding: 15px 3px;
+    }
+
+    .order-number {
+        min-width: 30px;
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+
+    .order-text {
+        font-size: 18px;
+    }
 }
 
 /* =========================
@@ -818,11 +927,19 @@ footer p {
     .gallery-item {
         height: 300px;
     }
+
+    .order-service-title {
+        font-size: 29px;
+    }
+
+    .order-text {
+        font-size: 17px;
+    }
+
 }
 
 </style>
 </head>
-
 
 <body>
 
@@ -831,11 +948,17 @@ footer p {
 ========================= -->
 
 <nav>
+
     <a href="#story">STORY</a>
+
     <a href="#family">FAMILY</a>
+
     <a href="#life">LIFE</a>
+
     <a href="#memories">MEMORIES</a>
+
     <a href="#service">SERVICE</a>
+
 </nav>
 
 
@@ -1215,7 +1338,7 @@ footer p {
 
 
 <!-- =========================
-     FUNERAL
+     FUNERAL SERVICE
 ========================= -->
 
 <section class="funeral">
@@ -1243,6 +1366,163 @@ footer p {
     <p>
         Belize City, Belize
     </p>
+
+
+    <!-- =========================
+         ORDER OF SERVICE
+    ========================= -->
+
+    <div class="order-service">
+
+        <h3 class="order-service-title">
+            Order of Service
+        </h3>
+
+
+        <div class="order-item">
+
+            <div class="order-number">1</div>
+
+            <div class="order-text">
+                <strong>Welcome and Opening Prayer</strong><br>
+                Reverend Shane Blackett
+            </div>
+
+        </div>
+
+
+        <div class="order-item">
+
+            <div class="order-number">2</div>
+
+            <div class="order-text">
+                <strong>First Congregational Song</strong><br>
+                Amazing Grace (My Chains Are Gone)
+            </div>
+
+        </div>
+
+
+        <div class="order-item">
+
+            <div class="order-number">3</div>
+
+            <div class="order-text">
+                <strong>First Scripture Reading</strong><br>
+                James 4:13–15 NIV<br>
+                Jahfeney Ferguson
+            </div>
+
+        </div>
+
+
+        <div class="order-item">
+
+            <div class="order-number">4</div>
+
+            <div class="order-text">
+                <strong>First Reflection</strong><br>
+                Ethel Villatoro
+            </div>
+
+        </div>
+
+
+        <div class="order-item">
+
+            <div class="order-number">5</div>
+
+            <div class="order-text">
+                <strong>Second Congregational Song</strong><br>
+                How Great Is Our God
+            </div>
+
+        </div>
+
+
+        <div class="order-item">
+
+            <div class="order-number">6</div>
+
+            <div class="order-text">
+                <strong>Second Reflection</strong><br>
+                Sheree Baptist
+            </div>
+
+        </div>
+
+
+        <div class="order-item">
+
+            <div class="order-number">7</div>
+
+            <div class="order-text">
+                <strong>Eulogy</strong><br>
+                Jahson Wright
+            </div>
+
+        </div>
+
+
+        <div class="order-item">
+
+            <div class="order-number">8</div>
+
+            <div class="order-text">
+                <strong>Second Scripture Reading</strong><br>
+                Psalm 23 NIV<br>
+                George Ferguson
+            </div>
+
+        </div>
+
+
+        <div class="order-item">
+
+            <div class="order-number">9</div>
+
+            <div class="order-text">
+                <strong>Third Congregational Song</strong><br>
+                Goodness of God
+            </div>
+
+        </div>
+
+
+        <div class="order-item">
+
+            <div class="order-number">10</div>
+
+            <div class="order-text">
+                <strong>Exhortation</strong>
+            </div>
+
+        </div>
+
+
+        <div class="order-item">
+
+            <div class="order-number">11</div>
+
+            <div class="order-text">
+                <strong>Final Viewing and Prayer for Family</strong>
+            </div>
+
+        </div>
+
+
+        <div class="order-item">
+
+            <div class="order-number">12</div>
+
+            <div class="order-text">
+                <strong>Recessional</strong><br>
+                To Eternal Garden Memorial Park
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
@@ -1311,3 +1591,4 @@ footer p {
 
 </body>
 </html>
+```
