@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,6 @@
     <title>Mr. Harrison Wright | Forever Remembered</title>
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -27,7 +25,6 @@
         }
 
         /* NAVIGATION */
-
         nav {
             background: #2f3b46;
             color: white;
@@ -40,7 +37,7 @@
             z-index: 1000;
         }
 
-        nav .logo {
+        .logo {
             font-size: 24px;
             font-weight: bold;
         }
@@ -62,7 +59,6 @@
         }
 
         /* BACK TO HOME */
-
         .back-area {
             text-align: center;
             background: #eeeae2;
@@ -83,13 +79,12 @@
             background: #947b4d;
         }
 
-        /* MEMORIAL HERO */
-
+        /* HERO */
         .memorial-hero {
             background:
                 linear-gradient(
-                    rgba(0,0,0,0.5),
-                    rgba(0,0,0,0.5)
+                    rgba(0,0,0,0.55),
+                    rgba(0,0,0,0.55)
                 ),
                 url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1600&q=80");
 
@@ -112,14 +107,18 @@
             max-width: 900px;
         }
 
-        .memorial-content img {
+        /* PHOTO PLACEHOLDER */
+        .photo-placeholder {
             width: 220px;
             height: 220px;
-            object-fit: cover;
             border-radius: 50%;
             border: 6px solid white;
-            margin-bottom: 25px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            margin: 0 auto 25px;
+            background: rgba(255,255,255,0.15);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
         }
 
         .memorial-content h1 {
@@ -133,7 +132,6 @@
         }
 
         /* SECTIONS */
-
         section {
             padding: 70px 7%;
         }
@@ -154,7 +152,6 @@
         }
 
         /* LIFE STORY */
-
         .story {
             max-width: 900px;
             margin: auto;
@@ -170,7 +167,6 @@
         }
 
         /* MEMORIES */
-
         .memories {
             background: #eeeae2;
         }
@@ -196,25 +192,22 @@
             margin-bottom: 12px;
         }
 
-        /* PHOTO GALLERY */
-
+        /* GALLERY */
         .gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 1100px;
+            max-width: 600px;
             margin: auto;
+            text-align: center;
         }
 
-        .gallery img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 8px;
+        .gallery-placeholder {
+            background: white;
+            padding: 50px 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            color: #666;
         }
 
         /* TRIBUTE */
-
         .tribute {
             max-width: 900px;
             margin: auto;
@@ -231,7 +224,6 @@
         }
 
         /* FOOTER */
-
         footer {
             background: #2f3b46;
             color: white;
@@ -244,7 +236,6 @@
         }
 
         /* MOBILE */
-
         @media (max-width: 800px) {
 
             nav {
@@ -265,10 +256,6 @@
             .memory-grid {
                 grid-template-columns: 1fr 1fr;
             }
-
-            .gallery {
-                grid-template-columns: 1fr 1fr;
-            }
         }
 
         @media (max-width: 550px) {
@@ -285,80 +272,46 @@
                 grid-template-columns: 1fr;
             }
 
-            .gallery {
-                grid-template-columns: 1fr;
-            }
-
             .story,
             .tribute {
                 padding: 25px;
             }
         }
-
     </style>
-
 </head>
 
 <body>
 
     <!-- NAVIGATION -->
-
     <nav>
-
         <div class="logo">
             Forever Remembered
         </div>
 
         <ul>
-
-            <li>
-                <a href="#memorial">Memorial</a>
-            </li>
-
-            <li>
-                <a href="#story">Life Story</a>
-            </li>
-
-            <li>
-                <a href="#memories">Memories</a>
-            </li>
-
-            <li>
-                <a href="#gallery">Gallery</a>
-            </li>
-
-            <li>
-                <a href="#tribute">Tribute</a>
-            </li>
-
+            <li><a href="#memorial">Memorial</a></li>
+            <li><a href="#story">Life Story</a></li>
+            <li><a href="#memories">Memories</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#tribute">Tribute</a></li>
         </ul>
-
     </nav>
 
-
     <!-- BACK TO HOME -->
-
     <div class="back-area">
-
         <a href="index.html?from=harrison" class="back-button">
             ← Back to Home
         </a>
-
     </div>
 
-
-    <!-- MEMORIAL HERO -->
-
+    <!-- MEMORIAL -->
     <section class="memorial-hero" id="memorial">
 
         <div class="memorial-content">
 
-            <!-- Change harrison.jpg to the exact name of Harrison's photo -->
-
-            <img
-                src="harrison.jpg"
-                alt="Photo of Mr. Harrison Wright"
-            >
+            <div class="photo-placeholder">
+                Photo
+            </div>
 
             <h1>Mr. Harrison Wright</h1>
 
@@ -370,19 +323,15 @@
 
     </section>
 
-
     <!-- LIFE STORY -->
-
     <section id="story">
 
         <div class="section-title">
-
             <h2>Life Story</h2>
 
             <p>
                 Remembering the life and legacy of Mr. Harrison Wright.
             </p>
-
         </div>
 
         <div class="story">
@@ -409,9 +358,7 @@
 
     </section>
 
-
     <!-- MEMORIES -->
-
     <section class="memories" id="memories">
 
         <div class="section-title">
@@ -427,47 +374,37 @@
         <div class="memory-grid">
 
             <div class="memory">
-
                 <h3>Family</h3>
 
                 <p>
                     The memories shared with family will
                     always hold a special place in our hearts.
                 </p>
-
             </div>
 
-
             <div class="memory">
-
                 <h3>Friendship</h3>
 
                 <p>
                     The friendships and relationships he built
                     will continue to be remembered.
                 </p>
-
             </div>
 
-
             <div class="memory">
-
                 <h3>Legacy</h3>
 
                 <p>
                     His life and the memories he left behind
                     will continue to live on.
                 </p>
-
             </div>
 
         </div>
 
     </section>
 
-
     <!-- PHOTO GALLERY -->
-
     <section id="gallery">
 
         <div class="section-title">
@@ -482,26 +419,19 @@
 
         <div class="gallery">
 
-            <img
-                src="harrison.jpg"
-                alt="Mr. Harrison Wright"
-            >
-
-            <!-- Add more photos here when you have them -->
+            <div class="gallery-placeholder">
+                Harrison's photos will appear here.
+            </div>
 
         </div>
 
     </section>
 
-
     <!-- TRIBUTE -->
-
     <section id="tribute">
 
         <div class="section-title">
-
             <h2>In Loving Memory</h2>
-
         </div>
 
         <div class="tribute">
@@ -515,9 +445,7 @@
 
     </section>
 
-
     <!-- FOOTER -->
-
     <footer>
 
         <p>
@@ -531,5 +459,4 @@
     </footer>
 
 </body>
-
 </html>
