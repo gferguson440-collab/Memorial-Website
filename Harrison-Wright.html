@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,212 +7,126 @@
     <title>Mr. Harrison Wright | Forever Remembered</title>
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             font-family: Georgia, "Times New Roman", serif;
+            background: #f5f1e8;
             color: #333;
-            background: #f8f6f1;
             line-height: 1.7;
         }
 
-        /* NAVIGATION */
-
-        nav {
-            background: #2f3b46;
+        header {
+            background: #3d3d3d;
             color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 7%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 15px;
-        }
-
-        nav ul li a:hover {
-            color: #d5c39b;
-        }
-
-        /* BACK TO HOME */
-
-        .back-area {
             text-align: center;
-            background: #eeeae2;
-            padding: 18px;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 18px;
+            opacity: 0.9;
         }
 
         .back-button {
             display: inline-block;
-            background: #b49a68;
-            color: white;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #ffffff;
+            color: #333;
             text-decoration: none;
-            padding: 12px 25px;
             border-radius: 6px;
-            font-size: 16px;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
         }
 
         .back-button:hover {
-            background: #947b4d;
+            background: #ddd;
         }
 
-        /* MEMORIAL HERO */
-
-        .memorial-hero {
-            background:
-                linear-gradient(
-                    rgba(0,0,0,0.5),
-                    rgba(0,0,0,0.5)
-                ),
-                url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1600&q=80");
-
-            background-size: cover;
-            background-position: center;
-
-            min-height: 70vh;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
+        .hero {
             text-align: center;
-            color: white;
-
-            padding: 40px 20px;
+            padding: 45px 20px;
         }
 
-        .memorial-content {
-            max-width: 900px;
-        }
-
-        /* MAIN PHOTO */
-
-        .memorial-content img.main-photo {
-            width: 220px;
-            height: 220px;
+        .main-photo {
+            width: 260px;
+            height: 260px;
             object-fit: cover;
             border-radius: 50%;
-            border: 6px solid white;
-            margin-bottom: 25px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            border: 7px solid white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
         }
 
-        .memorial-content h1 {
-            font-size: 52px;
-            margin-bottom: 12px;
+        .hero h2 {
+            margin-top: 25px;
+            font-size: 32px;
+            color: #3d3d3d;
         }
 
         .dates {
-            font-size: 23px;
-            font-style: italic;
+            font-size: 18px;
+            color: #777;
+            margin-top: 5px;
         }
 
-        /* SECTIONS */
-
         section {
-            padding: 70px 7%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 45px 20px;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .section-title h2 {
-            color: #2f3b46;
-            font-size: 35px;
-            margin-bottom: 10px;
+            font-size: 30px;
+            color: #3d3d3d;
+            margin-bottom: 8px;
         }
 
         .section-title p {
-            color: #666;
+            color: #777;
         }
 
-        /* LIFE STORY */
-
-        .story {
-            max-width: 900px;
-            margin: auto;
+        .about {
             background: white;
-            padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-        }
-
-        .story p {
-            font-size: 18px;
-            margin-bottom: 18px;
-        }
-
-        /* MEMORIES */
-
-        .memories {
-            background: #eeeae2;
-        }
-
-        .memory-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .memory {
-            background: white;
             padding: 30px;
-            border-radius: 10px;
-            text-align: center;
             box-shadow: 0 3px 12px rgba(0,0,0,0.08);
         }
 
-        .memory h3 {
-            color: #2f3b46;
-            margin-bottom: 12px;
+        .about p {
+            margin-bottom: 15px;
         }
 
-        /* PHOTO GALLERY */
+        .about p:last-child {
+            margin-bottom: 0;
+        }
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
-            max-width: 1100px;
-            margin: auto;
         }
 
         .gallery img {
             width: 100%;
-            height: 280px;
+            height: 250px;
             object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             transition: transform 0.3s ease;
         }
 
@@ -221,257 +134,112 @@
             transform: scale(1.03);
         }
 
-        /* TRIBUTE */
-
-        .tribute {
-            max-width: 900px;
-            margin: auto;
+        .quote {
+            background: #e8e0d1;
             text-align: center;
-            background: white;
-            padding: 45px;
+            padding: 45px 25px;
+            margin-top: 20px;
             border-radius: 10px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
         }
 
-        .tribute p {
-            font-size: 20px;
+        .quote p {
+            font-size: 23px;
             font-style: italic;
+            color: #4a4a4a;
         }
-
-        /* FOOTER */
 
         footer {
-            background: #2f3b46;
+            background: #3d3d3d;
             color: white;
             text-align: center;
-            padding: 35px 20px;
+            padding: 25px 20px;
+            margin-top: 30px;
         }
 
         footer p {
-            margin: 5px 0;
+            font-size: 14px;
+            opacity: 0.9;
         }
 
-        /* MOBILE */
-
-        @media (max-width: 800px) {
-
-            nav {
-                flex-direction: column;
-                gap: 15px;
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 30px;
             }
 
-            nav ul {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
+            .hero h2 {
+                font-size: 25px;
             }
 
-            .memorial-content h1 {
-                font-size: 40px;
-            }
-
-            .memory-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .gallery {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 550px) {
-
-            .memorial-content h1 {
-                font-size: 32px;
-            }
-
-            .dates {
-                font-size: 19px;
-            }
-
-            .memory-grid {
-                grid-template-columns: 1fr;
+            .main-photo {
+                width: 210px;
+                height: 210px;
             }
 
             .gallery {
                 grid-template-columns: 1fr;
             }
-
-            .story,
-            .tribute {
-                padding: 25px;
-            }
-
-            .memorial-content img.main-photo {
-                width: 180px;
-                height: 180px;
-            }
         }
-
     </style>
-
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
-
-    <nav>
-
-        <div class="logo">
-            Forever Remembered
-        </div>
-
-        <ul>
-
-            <li>
-                <a href="#memorial">Memorial</a>
-            </li>
-
-            <li>
-                <a href="#story">Life Story</a>
-            </li>
-
-            <li>
-                <a href="#memories">Memories</a>
-            </li>
-
-            <li>
-                <a href="#gallery">Gallery</a>
-            </li>
-
-            <li>
-                <a href="#tribute">Tribute</a>
-            </li>
-
-        </ul>
-
-    </nav>
-
-
-    <!-- BACK TO HOME -->
-
-    <div class="back-area">
+    <!-- HEADER -->
+    <header>
+        <h1>Forever Remembered</h1>
+        <p>A Memorial in Loving Memory</p>
 
         <a href="index.html?from=harrison" class="back-button">
             ← Back to Home
         </a>
+    </header>
+
+
+    <!-- HERO -->
+    <div class="hero">
+
+        <img
+            src="harrison.jpg"
+            alt="Mr. Harrison Wright"
+            class="main-photo"
+        >
+
+        <h2>Mr. Harrison Wright</h2>
+
+        <div class="dates">
+            Forever in our hearts
+        </div>
 
     </div>
 
 
-    <!-- MEMORIAL HERO -->
-
-    <section class="memorial-hero" id="memorial">
-
-        <div class="memorial-content">
-
-            <img
-                src="harrison.jpg"
-                alt="Photo of Mr. Harrison Wright"
-                class="main-photo"
-            >
-
-            <h1>Mr. Harrison Wright</h1>
-
-            <p class="dates">
-                Forever Remembered
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- LIFE STORY -->
-
-    <section id="story">
+    <!-- ABOUT -->
+    <section>
 
         <div class="section-title">
-
-            <h2>Life Story</h2>
-
-            <p>
-                Remembering the life and legacy of Mr. Harrison Wright.
-            </p>
-
+            <h2>In Loving Memory</h2>
+            <p>Remembering a life that will never be forgotten.</p>
         </div>
 
-        <div class="story">
+        <div class="about">
 
             <p>
-                Mr. Harrison Wright was a valued and cherished
-                member of his family and community.
+                Mr. Harrison Wright was a beloved person whose life
+                touched the hearts of family, friends, and everyone
+                who had the privilege of knowing him.
             </p>
 
             <p>
-                His life touched the people around him in many
-                meaningful ways. The memories he created and
-                the lessons he shared will continue to be remembered
-                by those who knew and loved him.
+                His memories, kindness, and the moments shared with
+                him will continue to live on in the hearts of those
+                who loved him.
             </p>
 
             <p>
-                This memorial is a place to honor his life,
-                remember his story, and celebrate the impact
-                he had on others.
+                This memorial page was created to honor his life,
+                remember the special moments, and keep his memory
+                alive for generations to come.
             </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- MEMORIES -->
-
-    <section class="memories" id="memories">
-
-        <div class="section-title">
-
-            <h2>Memories</h2>
-
-            <p>
-                A collection of memories that will always be cherished.
-            </p>
-
-        </div>
-
-        <div class="memory-grid">
-
-            <div class="memory">
-
-                <h3>Family</h3>
-
-                <p>
-                    The memories shared with family will
-                    always hold a special place in our hearts.
-                </p>
-
-            </div>
-
-
-            <div class="memory">
-
-                <h3>Friendship</h3>
-
-                <p>
-                    The friendships and relationships he built
-                    will continue to be remembered.
-                </p>
-
-            </div>
-
-
-            <div class="memory">
-
-                <h3>Legacy</h3>
-
-                <p>
-                    His life and the memories he left behind
-                    will continue to live on.
-                </p>
-
-            </div>
 
         </div>
 
@@ -479,18 +247,16 @@
 
 
     <!-- PHOTO GALLERY -->
-
     <section id="gallery">
 
         <div class="section-title">
-
             <h2>Photo Gallery</h2>
 
             <p>
-                Special moments and memories of Mr. Harrison Wright.
+                Special moments and memories.
             </p>
-
         </div>
+
 
         <div class="gallery">
 
@@ -524,21 +290,14 @@
     </section>
 
 
-    <!-- TRIBUTE -->
+    <!-- MEMORIAL QUOTE -->
+    <section>
 
-    <section id="tribute">
-
-        <div class="section-title">
-
-            <h2>In Loving Memory</h2>
-
-        </div>
-
-        <div class="tribute">
+        <div class="quote">
 
             <p>
-                "Those we love may leave our sight,
-                but they never leave our hearts."
+                "Those we love never truly leave us.
+                Their memories remain forever in our hearts."
             </p>
 
         </div>
@@ -547,19 +306,14 @@
 
 
     <!-- FOOTER -->
-
     <footer>
 
         <p>
-            Forever Remembered
-        </p>
-
-        <p>
-            Honoring the life and memory of Mr. Harrison Wright.
+            Forever Remembered — In Loving Memory of Mr. Harrison Wright
         </p>
 
     </footer>
 
-</body>
 
+</body>
 </html>
