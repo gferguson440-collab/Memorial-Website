@@ -4,14 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Harrison Wright | Dutty Harry</title>
+<title>Harrison Wright | In Loving Memory</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+
+:root {
+    --gold: #d8bb80;
+    --gold-light: #f0d9a2;
+    --dark: #050505;
+    --dark2: #0d0d0d;
+    --dark3: #151515;
+    --cream: #f4eee2;
+    --gray: #b8b8b8;
+}
 
 * {
     margin: 0;
@@ -24,70 +33,79 @@ html {
 }
 
 body {
-    background: #050505;
-    color: #f4eee2;
-    font-family: 'Montserrat', sans-serif;
-    overflow-x: hidden;
+    background: var(--dark);
+    color: var(--cream);
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.7;
 }
 
-:root {
-    --gold: #d8bb80;
-    --gold-light: #f0d9a2;
-    --dark: #050505;
-    --dark2: #0d0d0d;
-    --cream: #f4eee2;
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
 /* =========================
    NAVIGATION
 ========================= */
 
-nav {
+.navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 22px 20px;
-
-    background: rgba(0, 0, 0, 0.94);
+    background: rgba(5, 5, 5, 0.94);
     backdrop-filter: blur(10px);
 
-    border-bottom: 1px solid rgba(216, 187, 128, 0.35);
+    border-bottom: 1px solid rgba(216, 187, 128, 0.25);
 }
 
-nav a {
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 25px;
+}
+
+.logo {
+    font-family: "Cormorant Garamond", serif;
     color: var(--gold);
-    text-decoration: none;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
 
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 3px;
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
 
-    margin: 0 17px;
-
+.nav-links a {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #ddd;
     transition: 0.3s;
 }
 
-nav a:hover {
-    color: white;
+.nav-links a:hover {
+    color: var(--gold);
 }
 
-/* HOME BUTTON */
-
-.home-nav {
+.home-btn {
     border: 1px solid var(--gold);
-    padding: 9px 16px;
-    border-radius: 25px;
-    margin-right: 22px !important;
+    padding: 9px 15px;
+    color: var(--gold) !important;
 }
 
-.home-nav:hover {
+.home-btn:hover {
     background: var(--gold);
     color: #000 !important;
 }
@@ -102,345 +120,283 @@ nav a:hover {
     position: relative;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
     text-align: center;
 
-    overflow: hidden;
-
-    background:
+    background-image:
         linear-gradient(
-            rgba(0,0,0,0.35),
-            rgba(0,0,0,0.90)
+            rgba(0,0,0,0.48),
+            rgba(0,0,0,0.82)
         ),
-        url("./harrison.jpg") center center / cover no-repeat;
+        url("./harrison.jpg");
+
+    background-size: cover;
+    background-position: center;
 }
 
-.hero::before {
+.hero::after {
     content: "";
-
     position: absolute;
-    inset: 0;
+    inset: 25px;
 
-    background:
-        radial-gradient(
-            circle at center,
-            transparent 10%,
-            rgba(0,0,0,0.55) 100%
-        );
+    border: 1px solid rgba(216, 187, 128, 0.35);
+
+    pointer-events: none;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
 
-    width: 100%;
-    max-width: 1200px;
-
-    padding: 120px 25px 70px;
+    max-width: 900px;
+    padding: 100px 25px 60px;
 }
 
-.in-memory {
+.hero-small {
     color: var(--gold);
-
-    font-size: 15px;
-    letter-spacing: 7px;
-
-    margin-bottom: 25px;
-
-    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 13px;
+    margin-bottom: 15px;
 }
 
 .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: clamp(55px, 10vw, 125px);
-
-    font-weight: 500;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(60px, 10vw, 115px);
     line-height: 0.95;
-
-    color: #f5efe5;
-
-    text-shadow: 0 5px 30px black;
-
-    word-wrap: break-word;
+    font-weight: 500;
 }
 
-.nickname {
-    font-family: 'Great Vibes', cursive;
+.hero-name {
+    color: var(--cream);
+}
 
-    font-size: clamp(45px, 6vw, 72px);
-
+.hero-nickname {
+    font-family: "Great Vibes", cursive;
     color: var(--gold);
-
-    margin: 15px 0 10px;
+    font-size: clamp(35px, 6vw, 60px);
+    margin-top: 15px;
 }
 
 .dates {
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: 25px;
-
+    margin-top: 25px;
+    color: var(--gold-light);
     letter-spacing: 3px;
+    font-size: 14px;
+}
 
-    color: #ddd2c0;
-
-    margin-bottom: 25px;
+.hero-line {
+    width: 100px;
+    height: 1px;
+    background: var(--gold);
+    margin: 30px auto;
 }
 
 .hero-quote {
-    max-width: 700px;
+    max-width: 650px;
+    margin: auto;
 
-    margin: 0 auto 35px;
-
-    color: #ddd;
-
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: 20px;
-
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px;
     font-style: italic;
-
-    line-height: 1.6;
+    color: #eee;
 }
 
 /* =========================
-   BUTTONS
-========================= */
-
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.hero-buttons a {
-    display: inline-block;
-
-    color: var(--gold);
-
-    text-decoration: none;
-
-    border: 1px solid var(--gold);
-
-    padding: 12px 24px;
-
-    border-radius: 30px;
-
-    font-size: 11px;
-
-    letter-spacing: 2px;
-
-    transition: 0.35s;
-}
-
-.hero-buttons a:hover {
-    background: var(--gold);
-    color: black;
-}
-
-/* HOME HERO BUTTON */
-
-.home-button {
-    border-color: var(--gold-light) !important;
-}
-
-.home-button:hover {
-    background: var(--gold-light) !important;
-}
-
-/* =========================
-   SECTIONS
+   GENERAL SECTIONS
 ========================= */
 
 section {
-    padding: 100px 8%;
-    position: relative;
+    padding: 90px 25px;
 }
 
-.section-dark {
-    background: #050505;
-}
-
-.section-light-dark {
-    background: #0b0b0b;
+.section-inner {
+    max-width: 1100px;
+    margin: auto;
 }
 
 .section-title {
     text-align: center;
-
-    color: var(--gold);
-
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: 50px;
-
-    font-weight: 500;
-
-    margin-bottom: 15px;
+    margin-bottom: 55px;
 }
 
-.section-line {
-    width: 70px;
-    height: 1px;
+.section-title span {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 4px;
+}
 
-    background: var(--gold);
+.section-title h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(40px, 6vw, 65px);
+    font-weight: 500;
+    color: var(--cream);
+    margin: 8px 0;
+}
 
-    margin: 0 auto 50px;
+.section-title p {
+    color: #aaa;
+    max-width: 700px;
+    margin: auto;
 }
 
 /* =========================
    STORY
 ========================= */
 
-.story-container {
-    max-width: 1000px;
-    margin: auto;
+.story {
+    background: var(--dark2);
+}
 
+.story-content {
+    max-width: 850px;
+    margin: auto;
     text-align: center;
 }
 
-.story-container p {
-    color: #d3cdc2;
-
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: 21px;
-
-    line-height: 1.8;
-
+.story-content p {
+    color: #d0d0d0;
+    font-size: 17px;
     margin-bottom: 22px;
+}
+
+.drop-cap::first-letter {
+    color: var(--gold);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 70px;
+    float: left;
+    line-height: 55px;
+    padding-right: 8px;
 }
 
 /* =========================
    FAMILY
 ========================= */
 
-.family-grid {
-    max-width: 1100px;
+.family {
+    background: var(--dark);
+}
 
+.family-grid {
+    max-width: 950px;
     margin: auto;
 
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
-
     gap: 25px;
 }
 
 .family-card {
-    background: #101010;
+    background: var(--dark2);
+    border: 1px solid rgba(216, 187, 128, 0.25);
 
-    border: 1px solid rgba(216,187,128,0.25);
+    padding: 35px;
 
-    padding: 30px;
+    text-align: center;
 
     transition: 0.3s;
 }
 
 .family-card:hover {
     border-color: var(--gold);
-
     transform: translateY(-4px);
 }
 
 .family-card h3 {
     color: var(--gold);
-
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: 28px;
-
-    margin-bottom: 15px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+    margin-bottom: 10px;
 }
 
 .family-card p {
-    color: #ccc;
-
-    line-height: 1.8;
+    color: #bbb;
 }
 
 /* =========================
    LIFE
 ========================= */
 
-.life-container {
-    max-width: 1100px;
+.life {
+    background: var(--dark2);
+}
 
+.life-content {
+    max-width: 900px;
     margin: auto;
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 50px;
-
-    align-items: center;
+    text-align: center;
 }
 
-.life-image {
-    width: 100%;
-
-    height: 500px;
-
-    object-fit: cover;
-
-    border: 1px solid rgba(216,187,128,0.35);
-}
-
-.life-text h3 {
-    color: var(--gold);
-
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: 36px;
-
-    margin-bottom: 20px;
-}
-
-.life-text p {
-    color: #d0cbc2;
-
-    line-height: 1.9;
-
-    margin-bottom: 18px;
+.life-content p {
+    color: #ccc;
+    font-size: 17px;
+    margin-bottom: 22px;
 }
 
 /* =========================
-   MEMORIES
+   PHOTO GALLERY
 ========================= */
+
+.gallery-section {
+    background: var(--dark);
+}
 
 .gallery {
     max-width: 1200px;
-
     margin: auto;
 
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
 
-    gap: 15px;
+    gap: 18px;
 }
 
 .gallery-item {
-    height: 330px;
+    position: relative;
+
+    height: 360px;
 
     overflow: hidden;
 
-    background: #111;
+    background: var(--dark2);
 
-    border: 1px solid rgba(216,187,128,0.25);
+    border: 1px solid rgba(216, 187, 128, 0.45);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.gallery-item::after {
+    content: "";
+
+    position: absolute;
+    inset: 8px;
+
+    border: 1px solid rgba(216, 187, 128, 0.25);
+
+    pointer-events: none;
+}
+
+.gallery-item:hover {
+    transform: translateY(-6px);
+
+    border-color: var(--gold);
+
+    box-shadow: 0 18px 40px rgba(0,0,0,0.65);
 }
 
 .gallery-item img {
     width: 100%;
     height: 100%;
 
-    object-fit: cover;
-
     display: block;
+
+    object-fit: cover;
 
     transition: transform 0.6s ease;
 }
@@ -450,37 +406,146 @@ section {
 }
 
 /* =========================
-   SERVICE
+   OREO
 ========================= */
 
-.service-container {
-    max-width: 1000px;
+.oreo {
+    background: var(--dark2);
+}
 
+.oreo-box {
+    max-width: 800px;
     margin: auto;
 
     text-align: center;
+
+    padding: 45px;
+
+    border: 1px solid rgba(216, 187, 128, 0.3);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(216,187,128,0.05),
+            transparent
+        );
 }
 
-.service-container h3 {
+.oreo-box h3 {
+    font-family: "Great Vibes", cursive;
+    font-size: 55px;
     color: var(--gold);
+    font-weight: 400;
+}
 
-    font-family: 'Cormorant Garamond', serif;
+.oreo-box p {
+    color: #ccc;
+    font-size: 17px;
+    margin-top: 15px;
+}
 
-    font-size: 34px;
+/* =========================
+   SERVICE & FRIENDSHIP
+========================= */
 
+.service-friendship {
+    background: var(--dark);
+}
+
+.service-content {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.service-content p {
+    color: #ccc;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   SURNAME STORY
+========================= */
+
+.surname {
+    background: var(--dark2);
+}
+
+.surname-box {
+    max-width: 850px;
+    margin: auto;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(216,187,128,0.35);
+    border-bottom: 1px solid rgba(216,187,128,0.35);
+
+    padding: 50px 25px;
+}
+
+.surname-box h3 {
+    font-family: "Cormorant Garamond", serif;
+    color: var(--gold);
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.surname-box p {
+    color: #ccc;
+    font-size: 17px;
+}
+
+/* =========================
+   FUNERAL SERVICE
+========================= */
+
+.funeral {
+    background: var(--dark);
+}
+
+.funeral-card {
+    max-width: 850px;
+    margin: auto;
+
+    padding: 50px 35px;
+
+    text-align: center;
+
+    background: var(--dark2);
+
+    border: 1px solid rgba(216,187,128,0.4);
+
+    box-shadow: 0 15px 45px rgba(0,0,0,0.45);
+}
+
+.funeral-card h3 {
+    font-family: "Cormorant Garamond", serif;
+    color: var(--gold);
+    font-size: 38px;
     margin-bottom: 25px;
 }
 
-.service-container p {
-    color: #d0cbc2;
+.funeral-date {
+    font-size: 23px;
+    color: var(--cream);
+    margin-bottom: 5px;
+}
 
-    font-family: 'Cormorant Garamond', serif;
+.funeral-time {
+    color: var(--gold-light);
+    font-size: 18px;
+    margin-bottom: 25px;
+}
 
-    font-size: 21px;
+.funeral-card p {
+    color: #bbb;
+    margin-bottom: 8px;
+}
 
-    line-height: 1.8;
-
-    margin-bottom: 20px;
+.funeral-card .location {
+    color: var(--cream);
+    font-size: 19px;
 }
 
 /* =========================
@@ -488,166 +553,43 @@ section {
 ========================= */
 
 .order-service {
-    max-width: 900px;
-
-    margin: 55px auto 0;
-
-    padding: 45px 35px;
-
-    background: #0d0d0d;
-
-    border: 1px solid rgba(216,187,128,0.35);
-
-    box-shadow: 0 15px 45px rgba(0,0,0,0.35);
+    background: var(--dark2);
 }
 
-.order-service-title {
-    text-align: center;
-
-    color: var(--gold);
-
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: 38px;
-
-    margin-bottom: 35px;
+.order-list {
+    max-width: 900px;
+    margin: auto;
 }
 
 .order-item {
-    display: flex;
+    display: grid;
+    grid-template-columns: 60px 1fr;
 
-    align-items: flex-start;
+    padding: 22px 10px;
 
-    gap: 20px;
-
-    padding: 17px 10px;
-
-    border-bottom: 1px solid rgba(216,187,128,0.14);
-}
-
-.order-item:last-child {
-    border-bottom: none;
+    border-bottom: 1px solid rgba(216,187,128,0.18);
 }
 
 .order-number {
-    min-width: 35px;
-
-    height: 35px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border: 1px solid var(--gold);
-
-    border-radius: 50%;
-
     color: var(--gold);
 
-    font-family: 'Cormorant Garamond', serif;
+    font-family: "Cormorant Garamond", serif;
 
-    font-size: 18px;
+    font-size: 30px;
 }
 
-.order-text {
-    color: #ddd5c8;
+.order-info h3 {
+    color: var(--cream);
 
-    font-family: 'Cormorant Garamond', serif;
+    font-family: "Cormorant Garamond", serif;
 
-    font-size: 20px;
-
-    line-height: 1.5;
-
-    text-align: left;
-}
-
-.order-text strong {
-    color: var(--gold);
-
+    font-size: 25px;
     font-weight: 500;
 }
 
-/* =========================
-   OREO
-========================= */
-
-.oreo {
-    text-align: center;
-
-    padding: 80px 20px;
-
-    background:
-        linear-gradient(
-            rgba(0,0,0,0.7),
-            rgba(0,0,0,0.9)
-        ),
-        url("./harrison4.jpg") center / cover;
-}
-
-.oreo h2 {
-    font-family: 'Great Vibes', cursive;
-
-    color: var(--gold);
-
-    font-size: 65px;
-
-    margin-bottom: 10px;
-}
-
-.oreo p {
-    max-width: 700px;
-
-    margin: auto;
-
-    color: #ddd;
-
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: 22px;
-
-    line-height: 1.7;
-}
-
-/* =========================
-   FUNERAL
-========================= */
-
-.funeral {
-    text-align: center;
-
-    background: #0b0b0b;
-
-    border-top: 1px solid rgba(216,187,128,0.2);
-
-    border-bottom: 1px solid rgba(216,187,128,0.2);
-}
-
-.funeral h2 {
-    color: var(--gold);
-
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: 45px;
-
-    margin-bottom: 25px;
-}
-
-.funeral p {
-    color: #ddd;
-
-    line-height: 1.9;
-
-    margin: 8px 0;
-}
-
-.funeral .date {
-    color: var(--gold);
-
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: 28px;
+.order-info p {
+    color: #999;
+    font-size: 14px;
 }
 
 /* =========================
@@ -655,41 +597,76 @@ section {
 ========================= */
 
 .legacy {
-    text-align: center;
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.78),
+            rgba(0,0,0,0.92)
+        ),
+        url("./harrison2.jpg");
 
-    background: #050505;
+    background-size: cover;
+    background-position: center;
+
+    text-align: center;
 }
 
-.legacy-container {
+.legacy-content {
     max-width: 850px;
-
     margin: auto;
 }
 
-.legacy p {
-    color: #d5d0c7;
+.legacy h2 {
+    font-family: "Great Vibes", cursive;
 
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: 23px;
-
-    line-height: 1.8;
-
-    margin-bottom: 25px;
-}
-
-.final-quote {
     color: var(--gold);
 
-    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(55px, 8vw, 85px);
 
-    font-size: 29px;
+    font-weight: 400;
+}
+
+.legacy p {
+    font-family: "Cormorant Garamond", serif;
+
+    color: #eee;
+
+    font-size: 25px;
 
     font-style: italic;
 
-    line-height: 1.6;
+    margin-top: 15px;
+}
 
-    margin-top: 40px;
+/* =========================
+   HOME BUTTON
+========================= */
+
+.bottom-home {
+    text-align: center;
+    padding: 70px 20px;
+
+    background: #030303;
+}
+
+.bottom-home a {
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    border: 1px solid var(--gold);
+
+    color: var(--gold);
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+.bottom-home a:hover {
+    background: var(--gold);
+    color: #000;
 }
 
 /* =========================
@@ -697,274 +674,156 @@ section {
 ========================= */
 
 footer {
+    background: #020202;
+
+    border-top: 1px solid rgba(216,187,128,0.2);
+
     text-align: center;
 
-    padding: 50px 20px;
-
-    background: #000;
-
-    border-top: 1px solid rgba(216,187,128,0.25);
+    padding: 45px 20px;
 }
 
-footer .name {
-    font-family: 'Great Vibes', cursive;
+.footer-name {
+    font-family: "Great Vibes", cursive;
 
     color: var(--gold);
 
     font-size: 45px;
-
-    margin-bottom: 10px;
 }
 
 footer p {
-    color: #888;
+    color: #777;
 
     font-size: 12px;
 
-    letter-spacing: 2px;
+    margin-top: 8px;
 }
 
 /* =========================
-   ANIMATIONS
+   RESPONSIVE
 ========================= */
 
-@keyframes fadeUp {
+@media (max-width: 900px) {
 
-    from {
-        opacity: 0;
-        transform: translateY(25px);
+    .nav-links {
+        gap: 12px;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    .nav-links a {
+        font-size: 9px;
+        letter-spacing: 1px;
     }
 
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
-
-.hero-content > * {
-    animation: fadeUp 1.2s ease forwards;
-}
-
-.hero-content .in-memory {
-    animation-delay: 0.1s;
-}
-
-.hero-content h1 {
-    animation-delay: 0.2s;
-}
-
-.hero-content .nickname {
-    animation-delay: 0.35s;
-}
-
-.hero-content .dates {
-    animation-delay: 0.45s;
-}
-
-.hero-content .hero-quote {
-    animation-delay: 0.55s;
-}
-
-.hero-content .hero-buttons {
-    animation-delay: 0.65s;
-}
-
-/* =========================
-   MOBILE
-========================= */
 
 @media (max-width: 768px) {
 
-    nav {
-        padding: 13px 8px;
-
-        overflow-x: auto;
-
-        justify-content: flex-start;
-
-        white-space: nowrap;
+    .nav-container {
+        min-height: 65px;
+        padding: 0 15px;
     }
 
-    nav a {
-        font-size: 9px;
-
-        letter-spacing: 2px;
-
-        margin: 0 9px;
+    .logo {
+        font-size: 20px;
     }
 
-    .home-nav {
-        padding: 7px 12px;
-
-        margin-right: 12px !important;
+    .nav-links {
+        gap: 8px;
     }
 
-    .hero {
-        min-height: 100svh;
-
-        background-position: center center;
+    .nav-links a:not(.home-btn) {
+        display: none;
     }
 
-    .hero-content {
-        padding: 120px 18px 50px;
-    }
-
-    .in-memory {
-        font-size: 10px;
-
-        letter-spacing: 4px;
-
-        margin-bottom: 20px;
-    }
-
-    .hero h1 {
-        font-size: clamp(42px, 13vw, 70px);
-
-        line-height: 0.95;
-
-        max-width: 100%;
-
-        overflow-wrap: break-word;
-    }
-
-    .nickname {
-        font-size: clamp(38px, 12vw, 58px);
-    }
-
-    .dates {
-        font-size: 19px;
-
-        letter-spacing: 2px;
-    }
-
-    .hero-quote {
-        font-size: 18px;
-    }
-
-    .hero-buttons a {
-        padding: 10px 18px;
-
-        font-size: 9px;
+    .home-btn {
+        font-size: 9px !important;
+        padding: 8px 10px;
     }
 
     section {
-        padding: 70px 6%;
+        padding: 70px 18px;
     }
 
-    .section-title {
-        font-size: 40px;
+    .hero::after {
+        inset: 15px;
     }
 
-    .story-container p {
-        font-size: 19px;
+    .hero-content {
+        padding-top: 100px;
+    }
+
+    .hero h1 {
+        font-size: 65px;
+    }
+
+    .hero-quote {
+        font-size: 20px;
     }
 
     .family-grid {
         grid-template-columns: 1fr;
     }
 
-    .life-container {
-        grid-template-columns: 1fr;
-    }
-
-    .life-image {
-        height: 380px;
-    }
-
     .gallery {
-        grid-template-columns: 1fr 1fr;
-
+        grid-template-columns: 2fr 2fr;
         gap: 10px;
     }
 
     .gallery-item {
-        height: 220px;
+        height: 240px;
     }
 
-    .oreo h2 {
-        font-size: 50px;
+    .oreo-box {
+        padding: 30px 20px;
     }
 
-    .oreo p {
-        font-size: 19px;
-    }
-
-    .funeral h2 {
-        font-size: 37px;
-    }
-
-    .legacy p {
-        font-size: 20px;
-    }
-
-    .final-quote {
-        font-size: 24px;
-    }
-
-    .order-service {
-        padding: 30px 18px;
-    }
-
-    .order-service-title {
-        font-size: 32px;
-    }
-
-    .order-item {
-        gap: 12px;
-        padding: 15px 3px;
-    }
-
-    .order-number {
-        min-width: 30px;
-        width: 30px;
-        height: 30px;
-        font-size: 16px;
-    }
-
-    .order-text {
-        font-size: 18px;
+    .funeral-card {
+        padding: 35px 20px;
     }
 }
-
-/* =========================
-   SMALL PHONES
-========================= */
 
 @media (max-width: 430px) {
 
     .hero h1 {
-        font-size: 45px;
+        font-size: 55px;
     }
 
-    .nickname {
-        font-size: 42px;
+    .hero-nickname {
+        font-size: 40px;
     }
 
     .dates {
-        font-size: 17px;
+        font-size: 11px;
+        letter-spacing: 2px;
     }
 
     .hero-quote {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .gallery {
         grid-template-columns: 1fr;
+        gap: 15px;
     }
 
     .gallery-item {
-        height: 300px;
+        height: 330px;
     }
 
-    .order-service-title {
-        font-size: 29px;
+    .order-item {
+        grid-template-columns: 45px 1fr;
     }
 
-    .order-text {
-        font-size: 17px;
+    .order-number {
+        font-size: 25px;
     }
 
+    .order-info h3 {
+        font-size: 21px;
+    }
 }
 
 </style>
@@ -976,22 +835,32 @@ footer p {
      NAVIGATION
 ========================= -->
 
-<nav>
+<nav class="navbar">
 
-    <!-- HOME BUTTON -->
-    <a href="index.html?memorial=harrison" class="home-nav">
-        HOME
-    </a>
+    <div class="nav-container">
 
-    <a href="#story">STORY</a>
+        <div class="logo">
+            HARRISON WRIGHT
+        </div>
 
-    <a href="#family">FAMILY</a>
+        <div class="nav-links">
 
-    <a href="#life">LIFE</a>
+            <a href="#story">STORY</a>
+            <a href="#family">FAMILY</a>
+            <a href="#life">LIFE</a>
+            <a href="#gallery">MEMORIES</a>
+            <a href="#service">SERVICE</a>
 
-    <a href="#memories">MEMORIES</a>
+            <a
+                href="index.html?memorial=harrison"
+                class="home-btn"
+            >
+                HOME PAGE
+            </a>
 
-    <a href="#service">SERVICE</a>
+        </div>
+
+    </div>
 
 </nav>
 
@@ -1004,15 +873,17 @@ footer p {
 
     <div class="hero-content">
 
-        <div class="in-memory">
+        <div class="hero-small">
             IN LOVING MEMORY
         </div>
 
         <h1>
-            Harrison Wright
+            <span class="hero-name">
+                Harrison Wright
+            </span>
         </h1>
 
-        <div class="nickname">
+        <div class="hero-nickname">
             Dutty Harry
         </div>
 
@@ -1020,34 +891,12 @@ footer p {
             September 8, 1968 — September 1, 2026
         </div>
 
+        <div class="hero-line"></div>
+
         <p class="hero-quote">
-            A life remembered through love, laughter, family,
-            friendship, hard work, and countless memories.
+            “A life remembered through love, laughter, family,
+            friendship, hard work, and countless memories.”
         </p>
-
-        <div class="hero-buttons">
-
-            <a href="index.html?memorial=harrison" class="home-button">
-                HOME PAGE
-            </a>
-
-            <a href="#story">
-                HIS STORY
-            </a>
-
-            <a href="#family">
-                FAMILY
-            </a>
-
-            <a href="#memories">
-                MEMORIES
-            </a>
-
-            <a href="#service">
-                SERVICE
-            </a>
-
-        </div>
 
     </div>
 
@@ -1055,50 +904,56 @@ footer p {
 
 
 <!-- =========================
-     HIS STORY
+     STORY
 ========================= -->
 
-<section id="story" class="section-dark">
+<section class="story" id="story">
 
-    <h2 class="section-title">
-        His Story
-    </h2>
+    <div class="section-inner">
 
-    <div class="section-line"></div>
+        <div class="section-title">
 
-    <div class="story-container">
+            <span>HIS STORY</span>
 
-        <p>
-            Harrison Wright, lovingly known to many as
-            <strong>“Dutty Harry,”</strong> was born on
-            September 8, 1968.
-        </p>
+            <h2>A Life Remembered</h2>
 
-        <p>
-            He was the son of Louanna Gillett and the grandson
-            of Hortence Gillett. He attended Grace Primary School
-            and later continued his education at Sec Two.
-        </p>
+            <p>
+                Remembering Harrison Wright and the beautiful
+                memories he leaves behind.
+            </p>
 
-        <p>
-            Harrison was a hardworking man who could turn his
-            hands to almost anything. He worked as a bartender
-            at Caye Chapel before eventually beginning a new
-            chapter of his life in San Pedro.
-        </p>
+        </div>
 
-        <p>
-            Harrison had a natural talent for fixing things.
-            He worked on golf carts, boats, motorcycles and
-            engines, and he was always willing to help someone
-            solve a problem.
-        </p>
+        <div class="story-content">
 
-        <p>
-            His life was filled with family, friendship,
-            laughter and memories that will remain with the
-            people who knew and loved him.
-        </p>
+            <p class="drop-cap">
+                Today, we gather to remember and honor
+                Mr. Harrison Wright, better known to many
+                of us as “Dutty Harry.”
+            </p>
+
+            <p>
+                It is difficult to find the words to capture
+                a life as fully and as generously as he lived.
+                He touched so many of us in ways we probably
+                never fully realize.
+            </p>
+
+            <p>
+                But his legacy is clear: through his kindness,
+                his wisdom, his laughter, his friendship,
+                and the love he gave so freely, his memory
+                will continue to live on.
+            </p>
+
+            <p>
+                Harrison was a person whose presence could
+                make a difference. The memories shared by
+                family and friends will remain a treasured
+                part of the story of his life.
+            </p>
+
+        </div>
 
     </div>
 
@@ -1109,75 +964,49 @@ footer p {
      FAMILY
 ========================= -->
 
-<section id="family" class="section-light-dark">
+<section class="family" id="family">
 
-    <h2 class="section-title">
-        Family
-    </h2>
+    <div class="section-inner">
 
-    <div class="section-line"></div>
+        <div class="section-title">
 
-    <div class="family-grid">
+            <span>FAMILY</span>
 
-        <div class="family-card">
-
-            <h3>His Children</h3>
+            <h2>Family & Loved Ones</h2>
 
             <p>
-                Allison Wright<br>
-                Jahson Wright<br>
-                Ason McField<br>
-                Alexander McField<br>
-                Harrison McField<br>
-                Cashema McField/Ferguson<br>
-                Carshena McField
+                The people who shared his journey and
+                continue to carry his memory.
             </p>
 
         </div>
 
+        <div class="family-grid">
 
-        <div class="family-card">
+            <div class="family-card">
 
-            <h3>His Grandchildren</h3>
+                <h3>Family</h3>
 
-            <p>
-                Jahliyah Wright<br>
-                Miracle McField<br>
-                Heaven McField<br>
-                Ason Torres<br>
-                Jahniyah Ferguson<br>
-                George Ferguson Jr.<br>
-                Jahfeney Ferguson<br>
-                Jamar Pitts<br>
-                Jahnellie Pitts<br>
-                Alfonso Tosta Jr.
-            </p>
+                <p>
+                    Harrison's family remains an important
+                    part of his story, carrying forward the
+                    memories, lessons, laughter, and love
+                    he shared throughout his life.
+                </p>
 
-        </div>
+            </div>
 
+            <div class="family-card">
 
-        <div class="family-card">
+                <h3>Friends</h3>
 
-            <h3>His Mother & Grandmother</h3>
+                <p>
+                    His friendships created countless
+                    memories that will continue to be
+                    remembered and shared for years to come.
+                </p>
 
-            <p>
-                Mother: Louanna Gillett<br><br>
-                Grandmother: Hortence Gillett
-            </p>
-
-        </div>
-
-
-        <div class="family-card">
-
-            <h3>His Brother & Friends</h3>
-
-            <p>
-                Brother: Allison McField
-                <br><br>
-                Close friends included Lucio,
-                Russian and Wayne.
-            </p>
+            </div>
 
         </div>
 
@@ -1190,42 +1019,33 @@ footer p {
      LIFE
 ========================= -->
 
-<section id="life" class="section-dark">
+<section class="life" id="life">
 
-    <h2 class="section-title">
-        His Life
-    </h2>
+    <div class="section-inner">
 
-    <div class="section-line"></div>
+        <div class="section-title">
 
-    <div class="life-container">
+            <span>HIS LIFE</span>
 
-        <img
-            src="./harrison2.jpg"
-            alt="Harrison Wright"
-            class="life-image"
-        >
+            <h2>Memories That Remain</h2>
 
-        <div class="life-text">
+        </div>
 
-            <h3>A Man Who Could Fix Almost Anything</h3>
+        <div class="life-content">
 
             <p>
-                Harrison had a special ability to understand
-                machines and figure out how things worked.
+                A person's life is made up of the moments
+                shared with others. Harrison's story lives
+                on through the people who knew him, loved him,
+                laughed with him, worked alongside him, and
+                shared important moments with him.
             </p>
 
             <p>
-                Golf carts, boats, motorcycles and engines
-                were among the many things he worked on.
-                Whenever someone needed help solving a problem,
-                Harrison was often the person they could turn to.
-            </p>
-
-            <p>
-                His willingness to help others was one of the
-                qualities that made him special to his family,
-                friends and community.
+                His memory will remain in the stories that
+                are told, the photographs that are treasured,
+                and the moments that family and friends
+                continue to remember.
             </p>
 
         </div>
@@ -1236,37 +1056,106 @@ footer p {
 
 
 <!-- =========================
-     MEMORIES
+     ALL 9 PHOTOS
 ========================= -->
 
-<section id="memories" class="section-light-dark">
+<section class="gallery-section" id="gallery">
 
-    <h2 class="section-title">
-        Memories
-    </h2>
+    <div class="section-title">
 
-    <div class="section-line"></div>
+        <span>MEMORIES</span>
+
+        <h2>Memories in Pictures</h2>
+
+        <p>
+            A collection of special moments, memories,
+            and cherished photographs.
+        </p>
+
+    </div>
+
 
     <div class="gallery">
 
+        <!-- PHOTO 1 -->
         <div class="gallery-item">
-            <img src="./harrison.jpg" alt="Memory of Harrison Wright">
+            <img
+                src="./harrison.jpg"
+                alt="Harrison Wright - Memory 1"
+                loading="lazy"
+            >
         </div>
 
+        <!-- PHOTO 2 -->
         <div class="gallery-item">
-            <img src="./harrison2.jpg" alt="Memory of Harrison Wright">
+            <img
+                src="./harrison2.jpg"
+                alt="Harrison Wright - Memory 2"
+                loading="lazy"
+            >
         </div>
 
+        <!-- PHOTO 3 -->
         <div class="gallery-item">
-            <img src="./harrison3.jpg" alt="Memory of Harrison Wright">
+            <img
+                src="./harrison3.jpg"
+                alt="Harrison Wright - Memory 3"
+                loading="lazy"
+            >
         </div>
 
+        <!-- PHOTO 4 -->
         <div class="gallery-item">
-            <img src="./harrison4.jpg" alt="Memory of Harrison Wright">
+            <img
+                src="./harrison4.jpg"
+                alt="Harrison Wright - Memory 4"
+                loading="lazy"
+            >
         </div>
 
+        <!-- PHOTO 5 -->
         <div class="gallery-item">
-            <img src="./harrison5.jpg" alt="Memory of Harrison Wright">
+            <img
+                src="./harrison5.jpg"
+                alt="Harrison Wright - Memory 5"
+                loading="lazy"
+            >
+        </div>
+
+        <!-- PHOTO 6 -->
+        <div class="gallery-item">
+            <img
+                src="./harrison6.jpg"
+                alt="Harrison Wright - Memory 6"
+                loading="lazy"
+            >
+        </div>
+
+        <!-- PHOTO 7 -->
+        <div class="gallery-item">
+            <img
+                src="./harrison7.jpg"
+                alt="Harrison Wright - Memory 7"
+                loading="lazy"
+            >
+        </div>
+
+        <!-- PHOTO 8 -->
+        <div class="gallery-item">
+            <img
+                src="./harrison8.jpg"
+                alt="Harrison Wright - Memory 8"
+                loading="lazy"
+            >
+        </div>
+
+        <!-- PHOTO 9 -->
+        <div class="gallery-item">
+            <img
+                src="./harrison9.jpg"
+                alt="Harrison Wright - Memory 9"
+                loading="lazy"
+            >
         </div>
 
     </div>
@@ -1280,14 +1169,29 @@ footer p {
 
 <section class="oreo">
 
-    <h2>Oreo</h2>
+    <div class="section-inner">
 
-    <p>
-        Harrison's beloved dog, Oreo, was also an important
-        part of his life. The memories shared with Oreo will
-        remain part of the story of a man who loved deeply
-        and cared for those around him.
-    </p>
+        <div class="section-title">
+
+            <span>A SPECIAL MEMORY</span>
+
+            <h2>Forever Remembered</h2>
+
+        </div>
+
+        <div class="oreo-box">
+
+            <h3>Oreo</h3>
+
+            <p>
+                Some memories become special because of
+                the simple moments, companionship, and
+                love shared along the way.
+            </p>
+
+        </div>
+
+    </div>
 
 </section>
 
@@ -1296,32 +1200,39 @@ footer p {
      SERVICE & FRIENDSHIP
 ========================= -->
 
-<section id="service" class="section-dark">
+<section class="service-friendship" id="service">
 
-    <h2 class="section-title">
-        Service & Friendship
-    </h2>
+    <div class="section-inner">
 
-    <div class="section-line"></div>
+        <div class="section-title">
 
-    <div class="service-container">
+            <span>FRIENDSHIP</span>
 
-        <h3>A Helping Hand</h3>
+            <h2>Service & Friendship</h2>
 
-        <p>
-            Harrison was known for helping people whenever
-            he could. Whether it involved repairing an engine,
-            fixing a golf cart, working on a boat or simply
-            helping someone solve a problem, he was willing
-            to lend a hand.
-        </p>
+        </div>
 
-        <p>
-            Special memories are shared with Jean Villatoro,
-            George Ferguson, Alfonso Tosta and Ethel Villatoro,
-            along with the many friends and family members
-            whose lives he touched.
-        </p>
+        <div class="service-content">
+
+            <p>
+                Harrison's life was connected to many
+                people through friendship, work, family,
+                and community.
+            </p>
+
+            <p>
+                The impact of a life cannot always be
+                measured by years. It is measured by the
+                people whose lives were touched along the way.
+            </p>
+
+            <p>
+                For those who knew Harrison, the memories
+                shared with him will always remain part of
+                his lasting legacy.
+            </p>
+
+        </div>
 
     </div>
 
@@ -1332,28 +1243,32 @@ footer p {
      SURNAME STORY
 ========================= -->
 
-<section class="section-light-dark">
+<section class="surname">
 
-    <h2 class="section-title">
-        A Part of His Story
-    </h2>
+    <div class="section-inner">
 
-    <div class="section-line"></div>
+        <div class="section-title">
 
-    <div class="story-container">
+            <span>LEGACY</span>
 
-        <p>
-            In 2011, Harrison changed his surname from Gillett
-            to Wright through deed poll. His family remembers
-            the questions and conversations surrounding the
-            different surnames carried by members of the family.
-        </p>
+            <h2>The Wright Family</h2>
 
-        <p>
-            It became another part of Harrison's unique story —
-            a story that will continue to be remembered by
-            those who knew him.
-        </p>
+        </div>
+
+        <div class="surname-box">
+
+            <h3>A Name That Lives On</h3>
+
+            <p>
+                A family name carries stories from one
+                generation to another. Through family,
+                memories, photographs, and the stories
+                people continue to share, Harrison's
+                memory will remain part of the Wright
+                family story.
+            </p>
+
+        </div>
 
     </div>
 
@@ -1366,159 +1281,292 @@ footer p {
 
 <section class="funeral">
 
-    <h2>
-        Funeral Service
-    </h2>
+    <div class="section-inner">
 
-    <p class="date">
-        Sunday, September 6, 2026
-    </p>
+        <div class="section-title">
 
-    <p>
-        1:00 P.M.
-    </p>
+            <span>CELEBRATION OF LIFE</span>
 
-    <p>
-        King's Park Church of the Nazarene
-    </p>
+            <h2>Funeral Service</h2>
 
-    <p>
-        31 Princess Margaret Drive
-    </p>
+        </div>
 
-    <p>
-        Belize City, Belize
-    </p>
+        <div class="funeral-card">
 
+            <h3>Celebration of Life</h3>
 
-    <!-- =========================
-         ORDER OF SERVICE
-    ========================= -->
-
-    <div class="order-service">
-
-        <h3 class="order-service-title">
-            Order of Service
-        </h3>
-
-
-        <div class="order-item">
-            <div class="order-number">1</div>
-
-            <div class="order-text">
-                <strong>Welcome and Opening Prayer</strong><br>
-                Reverend Shane Blackett
+            <div class="funeral-date">
+                Sunday, September 6, 2026
             </div>
+
+            <div class="funeral-time">
+                1:00 P.M.
+            </div>
+
+            <p class="location">
+                King's Park Church of the Nazarene
+            </p>
+
+            <p>
+                31 Princess Margaret Drive
+            </p>
+
+            <p>
+                Belize City, Belize
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ORDER OF SERVICE
+========================= -->
+
+<section class="order-service">
+
+    <div class="section-inner">
+
+        <div class="section-title">
+
+            <span>ORDER OF SERVICE</span>
+
+            <h2>Celebration of Life</h2>
+
+            <p>
+                The order of service for the celebration
+                of Harrison Wright's life.
+            </p>
+
         </div>
 
 
-        <div class="order-item">
-            <div class="order-number">2</div>
+        <div class="order-list">
 
-            <div class="order-text">
-                <strong>First Congregational Song</strong><br>
-                Amazing Grace (My Chains Are Gone)
+
+            <div class="order-item">
+
+                <div class="order-number">01</div>
+
+                <div class="order-info">
+
+                    <h3>
+                        Welcome and Opening Prayer
+                    </h3>
+
+                    <p>
+                        Reverend Shane Blackett
+                    </p>
+
+                </div>
+
             </div>
-        </div>
 
 
-        <div class="order-item">
-            <div class="order-number">3</div>
+            <div class="order-item">
 
-            <div class="order-text">
-                <strong>First Scripture Reading</strong><br>
-                James 4:13–15 NIV<br>
-                Jahfeney Ferguson
+                <div class="order-number">02</div>
+
+                <div class="order-info">
+
+                    <h3>
+                        First Congregational Song
+                    </h3>
+
+                    <p>
+                        Amazing Grace (My Chains Are Gone)
+                    </p>
+
+                </div>
+
             </div>
-        </div>
 
 
-        <div class="order-item">
-            <div class="order-number">4</div>
+            <div class="order-item">
 
-            <div class="order-text">
-                <strong>First Reflection</strong><br>
-                Ethel Villatoro
+                <div class="order-number">03</div>
+
+                <div class="order-info">
+
+                    <h3>
+                        First Scripture Reading
+                    </h3>
+
+                    <p>
+                        James 4:13–15 NIV — Jahfeney Ferguson
+                    </p>
+
+                </div>
+
             </div>
-        </div>
 
 
-        <div class="order-item">
-            <div class="order-number">5</div>
+            <div class="order-item">
 
-            <div class="order-text">
-                <strong>Second Congregational Song</strong><br>
-                How Great Is Our God
+                <div class="order-number">04</div>
+
+                <div class="order-info">
+
+                    <h3>
+                        First Reflection
+                    </h3>
+
+                    <p>
+                        Ethel Villatoro
+                    </p>
+
+                </div>
+
             </div>
-        </div>
 
 
-        <div class="order-item">
-            <div class="order-number">6</div>
+            <div class="order-item">
 
-            <div class="order-text">
-                <strong>Second Reflection</strong><br>
-                Sheree Baptist
+                <div class="order-number">05</div>
+
+                <div class="order-info">
+
+                    <h3>
+                        Second Congregational Song
+                    </h3>
+
+                    <p>
+                        How Great Is Our God
+                    </p>
+
+                </div>
+
             </div>
-        </div>
 
 
-        <div class="order-item">
-            <div class="order-number">7</div>
+            <div class="order-item">
 
-            <div class="order-text">
-                <strong>Eulogy</strong><br>
-                Jahson Wright
+                <div class="order-number">06</div>
+
+                <div class="order-info">
+
+                    <h3>
+                        Second Reflection
+                    </h3>
+
+                    <p>
+                        Sheree Baptist
+                    </p>
+
+                </div>
+
             </div>
-        </div>
 
 
-        <div class="order-item">
-            <div class="order-number">8</div>
+            <div class="order-item">
 
-            <div class="order-text">
-                <strong>Second Scripture Reading</strong><br>
-                Psalm 23 NIV<br>
-                George Ferguson
+                <div class="order-number">07</div>
+
+                <div class="order-info">
+
+                    <h3>
+                        Eulogy
+                    </h3>
+
+                    <p>
+                        Jahson Wright
+                    </p>
+
+                </div>
+
             </div>
-        </div>
 
 
-        <div class="order-item">
-            <div class="order-number">9</div>
+            <div class="order-item">
 
-            <div class="order-text">
-                <strong>Third Congregational Song</strong><br>
-                Goodness of God
+                <div class="order-number">08</div>
+
+                <div class="order-info">
+
+                    <h3>
+                        Second Scripture Reading
+                    </h3>
+
+                    <p>
+                        Psalm 23 NIV — George Ferguson
+                    </p>
+
+                </div>
+
             </div>
-        </div>
 
 
-        <div class="order-item">
-            <div class="order-number">10</div>
+            <div class="order-item">
 
-            <div class="order-text">
-                <strong>Exhortation</strong>
+                <div class="order-number">09</div>
+
+                <div class="order-info">
+
+                    <h3>
+                        Third Congregational Song
+                    </h3>
+
+                    <p>
+                        Goodness of God
+                    </p>
+
+                </div>
+
             </div>
-        </div>
 
 
-        <div class="order-item">
-            <div class="order-number">11</div>
+            <div class="order-item">
 
-            <div class="order-text">
-                <strong>Final Viewing and Prayer for Family</strong>
+                <div class="order-number">10</div>
+
+                <div class="order-info">
+
+                    <h3>
+                        Exhortation
+                    </h3>
+
+                </div>
+
             </div>
-        </div>
 
 
-        <div class="order-item">
-            <div class="order-number">12</div>
+            <div class="order-item">
 
-            <div class="order-text">
-                <strong>Recessional</strong><br>
-                To Eternal Garden Memorial Park
+                <div class="order-number">11</div>
+
+                <div class="order-info">
+
+                    <h3>
+                        Final Viewing and Prayer for Family
+                    </h3>
+
+                </div>
+
             </div>
+
+
+            <div class="order-item">
+
+                <div class="order-number">12</div>
+
+                <div class="order-info">
+
+                    <h3>
+                        Recessional
+                    </h3>
+
+                    <p>
+                        To Eternal Garden Memorial Park
+                    </p>
+
+                </div>
+
+            </div>
+
+
         </div>
 
     </div>
@@ -1532,43 +1580,34 @@ footer p {
 
 <section class="legacy">
 
-    <h2 class="section-title">
-        His Legacy
-    </h2>
+    <div class="legacy-content">
 
-    <div class="section-line"></div>
-
-    <div class="legacy-container">
+        <h2>
+            Forever in Our Hearts
+        </h2>
 
         <p>
-            Harrison will be remembered for his kindness,
-            wisdom, hard work, loyalty, generosity and love
-            for his family and friends.
+            “Those we love never truly leave us.
+            Their memories remain in everything
+            they helped make us become.”
         </p>
-
-        <p>
-            His laughter, stories, friendship and willingness
-            to help others created memories that will remain
-            long after his passing.
-        </p>
-
-        <p>
-            Though he is no longer here in person, the impact
-            he made on the lives around him will continue.
-        </p>
-
-        <div class="final-quote">
-
-            “Those we love never truly leave us;
-            their memories live on in our hearts,
-            their laughter echoes in our lives,
-            and their love remains forever.”
-
-        </div>
 
     </div>
 
 </section>
+
+
+<!-- =========================
+     RETURN HOME
+========================= -->
+
+<div class="bottom-home">
+
+    <a href="index.html?memorial=harrison">
+        ← RETURN TO HOME PAGE
+    </a>
+
+</div>
 
 
 <!-- =========================
@@ -1577,12 +1616,16 @@ footer p {
 
 <footer>
 
-    <div class="name">
+    <div class="footer-name">
         Harrison Wright
     </div>
 
     <p>
-        FOREVER REMEMBERED • FOREVER LOVED
+        September 8, 1968 — September 1, 2026
+    </p>
+
+    <p>
+        Forever remembered. Forever loved.
     </p>
 
 </footer>
